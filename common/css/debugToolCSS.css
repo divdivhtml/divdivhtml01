@@ -1,0 +1,204 @@
+@charset "UTF-8";
+/*
+/*	-color.scss
+/*	カラーパレット
+/*----------------------------------------------------*/
+/*
+/*	-kani.scss
+/*	自作のSassライブラリ
+/*----------------------------------------------------*/
+/* clearfix */
+/* IE6/7に対応したclearfix */
+/* アイコンのスプライト表示 */
+/* アイコンのスプライト表示(PC) */
+.dbg-width3em {
+  width: 3em;
+}
+
+.dbg-width6em {
+  width: 6em;
+}
+
+.dbg-height1_5em {
+  height: 1.5em;
+}
+
+.dbg-height3em {
+  height: 3em;
+}
+
+.dbg-height6em {
+  height: 6em;
+}
+
+.dbg-marginTop10 {
+  margin-top: 10px;
+}
+
+.dbg-marginTop20 {
+  margin-top: 20px;
+}
+
+.dbg-marginTop30 {
+  margin-top: 30px;
+}
+
+.dbg-margin10 {
+  margin: 10px;
+}
+
+.dbg-margin40 {
+  margin: 40px;
+}
+
+.dbg-padding10 {
+  padding: 10px;
+}
+
+.dbg-border {
+  border: solid 1px #666;
+}
+
+.dbg-inline {
+  display: inline;
+}
+
+.dbg-block {
+  display: block;
+}
+
+.dbg-inlineBlock {
+  display: inline-block;
+}
+
+.dbg-table {
+  display: table;
+}
+
+.dbg-tableCell {
+  display: table-cell;
+}
+
+.dbg-none {
+  display: none;
+}
+
+.dbg-fs18px {
+  font-size: 18px;
+}
+
+.dbg-bgcRed {
+  background-color: rgba(220, 20, 60, 0.5);
+}
+
+.dbg-bgcGreen {
+  background-color: rgba(0, 153, 68, 0.5);
+}
+
+.dbg-bgcBlue {
+  background-color: rgba(0, 104, 183, 0.5);
+}
+
+.dbg-bgcSilver {
+  background-color: rgba(204, 204, 204, 0.5);
+}
+
+.dbg-bgcOrange {
+  background-color: rgba(238, 120, 0, 0.5);
+}
+
+.dbg-bgcPink {
+  background-color: rgba(245, 178, 178, 0.5);
+}
+
+.dbg-bgcPurple {
+  background-color: rgba(127, 17, 132, 0.5);
+}
+
+.dbg-bgcCyan {
+  background-color: rgba(0, 161, 233, 0.5);
+}
+
+.dbg-bgcMagenta {
+  background-color: rgba(228, 0, 127, 0.5);
+}
+
+.dbg-bgcYellow {
+  background-color: rgba(255, 220, 0, 0.5);
+}
+
+.dbg-noteLine {
+  margin: 0 2em 2em;
+  padding: 14px;
+  font-size: 14px;
+  line-height: 30px;
+  background: url(../images/bg-noteLine.png) 0 9px;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dbg-noteLine p {
+  margin: 0;
+}
+
+.dbg-noteLine p ~ p {
+  margin: 30px 0 0;
+}
+
+.dbg-code {
+  display: block;
+  position: relative;
+  padding: 1em;
+  color: #F5F5F5;
+  background-color: #000;
+}
+
+.dbg-code.dbg-codeNum {
+  padding-left: 3em;
+}
+
+.dbg-code.dbg-codeNum:before {
+  content: "   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99100";
+  display: block;
+  height: calc(100% - 2em);
+  width: 2em;
+  position: absolute;
+  left: 0;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.dbg-dl dt {
+  position: relative;
+  font-weight: bold;
+  margin-left: 1em;
+}
+
+.dbg-dl dt::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.6em;
+  left: -1em;
+  width: 7px;
+  height: 3px;
+  background-color: #666;
+}
+
+.dbg-dl dd {
+  margin: 1em 0 2em;
+}
+
+.dbg-ul li {
+  position: relative;
+}
+.dbg-ul li::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: .5em;
+  left: -1em;
+  width: 6px;
+  height: 6px;
+  background-color: #666;
+  border-radius: 100%;
+}

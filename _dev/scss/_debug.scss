@@ -3,144 +3,89 @@
 /*	デバッグ用Sass
 /*----------------------------------------------------*/
 
+/* デバッグ用モジュール */
+.mod-markUp-sample{
+	margin-bottom: 60px;
+	*:first-child{
+		margin-top: 0 !important;
+	}
+}
+
+/* コードビュー */
+.mod-codeViewList dt{
+	margin-bottom: 10px;
+	background-color: $color-gray95;
+}
+
+.mod-htmlMeans dt{
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: solid 1px $color-gray90;
+}
+
+.mod-htmlMeans dd{
+	position: relative;
+	margin-left: 3em;
+	&:before{
+		position: absolute;
+		top: 0;
+		right: auto;
+		bottom: auto;
+		left: -1.5em;
+		content: "→"
+	}
+}
+
+/* ブラウザ対応一覧 */
+.mod-pts-list-browser{
+  margin-top: 40px;
+  padding: 10px;
+  background-color: $color-gray95;
+}
+
+.mod-pts-list-browser dt:after {
+  content:"：";
+}
+
+.mod-pts-list-browser dt,
+.mod-pts-list-browser dd{
+  display: inline;
+}
+
+.mod-pts-list-browser dd{
+	display: inline;
+}
+
+.mod-pts-list-browser dd{
+	display: inline;
+}
+
+.mod-pts-icon-browser{
+	@extend %kani-icon-sprite-pc;
+	width: 17px;
+	height: 17px;
+}
+
+.mod-pts-icon-browser_IE {
+  background-position: 0 0;
+}
+
+.mod-pts-icon-browser_FF {
+  background-position: -40px 0;
+}
+
+.mod-pts-icon-browser_Ch {
+  background-position: -20px 0;
+}
+
+.mod-pts-icon-browser_Sa {
+  background-position: -60px 0;
+}
+
+
 /* debug */
 
 .dbg-error{
 	background-color: transparentize( $color-error, 0.5);
 }
 
-.dbg-width3em{ width: 3em; }
-
-.dbg-width6em{ width: 6em; }
-
-.dbg-height1_5em{ height: 1.5em; }
-
-.dbg-height3em{ height: 3em; }
-
-.dbg-height6em{ height: 6em; }
-
-.dbg-marginTop10{ margin-top: 10px; }
-
-.dbg-marginTop20{ margin-top: 20px; }
-
-.dbg-marginTop30{ margin-top: 30px; }
-
-.dbg-margin10{ margin: 10px; }
-
-.dbg-margin40{ margin: 40px; }
-
-.dbg-padding10{ padding: 10px; }
-
-.dbg-border{ border: solid 1px $color-gray40; }
-
-.dbg-inline{ display: inline; }
-
-.dbg-block{ display: block; }
-
-.dbg-inlineBlock{ display: inline-block; }
-
-.dbg-table{ display: table; }
-
-.dbg-tableCell{ display: table-cell; }
-
-.dbg-none{ display: none; }
-
-.dbg-fs18px{ font-size: 18px; }
-
-@each $color, $colorCode in $kani-colorMap{
-	.dbg-bgc#{$color}{ background-color: transparentize( $colorCode, 0.5); }
-}
-
-.dbg-noteLine{
-	margin: 0 2em 2em;
-	padding: 14px;
-	font-size: 14px;
-	line-height: 30px;
-	background: url(../images/bg-noteLine.png) 0 9px;
-	box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.2);
-}
-
-.dbg-noteLine p{
-	margin: 0;
-}
-
-.dbg-noteLine p ~ p{
-	margin: 30px 0 0;
-}
-
-.dbg-code{
-	display: block;
-  position: relative;
-  padding: 1em;
-  color: #F5F5F5;
-  background-color: #000;
-}
-
-.dbg-code.dbg-codeNum{
-  padding-left: 3em;
-}
-
-@function kani-line-number($num){
-	$result: "   1";
-	$pre:"";
-	@for $i from 2 through $num{
-		$pre:"";
-		@if $i < 10{
-			$pre:"   ";
-		}@else if $i < 100{
-			$pre:"  ";
-		}
-		$result: $result + "#{$pre}#{$i}";
-	}
-	@return $result;
-}
-
-
-.dbg-code.dbg-codeNum:before {
-  content: kani-line-number(100);
-  display: block;
-  height: calc(100% - 2em);
-  width: 2em;
-  position: absolute;
-  left: 0;
-  word-wrap: break-word;
-  overflow: hidden;
-}
-
-
-.dbg-dl dt{
-	position: relative;
-	font-weight: bold;
-	margin-left: 1em;
-}
-
-.dbg-dl dt::before{
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0.6em;
-	left: -1em;
-	width: 7px;
-	height: 3px;
-	background-color: $color-gray40;
-}
-
-
-.dbg-dl dd{
-	margin: 1em 0 2em;
-}
-
-.dbg-ul li{
-	position: relative;
-	&::after {
-		display: block;
-		content: '';
-		position: absolute;
-		top: .5em;
-		left: -1em;
-		width: 6px;
-		height: 6px;
-		background-color: $color-gray40;
-		border-radius: 100%;
-	}
-}

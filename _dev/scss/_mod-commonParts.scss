@@ -3,13 +3,6 @@
 /*	_commonParts.htmlで使われている表示用モジュールのSass
 /*----------------------------------------------------*/
 
-.mod-markUp-sample{
-	margin-bottom: 60px;
-	*:first-child{
-		margin-top: 0 !important;
-	}
-}
-
 
 .mod-parts-counter{
 	counter-reset: mod-pts;
@@ -56,53 +49,6 @@
 	}
 }
 
-/* iframeを開く前の部分にマージンを設ける */
-.mod-iframeOpen_before{ margin-top: 60px !important; }
-
-.mod-pts-list-browser{
-  margin-top: 40px;
-  padding: 10px;
-  background-color: $color-gray95;
-}
-
-.mod-pts-list-browser dt:after {
-  content:"：";
-}
-
-.mod-pts-list-browser dt,
-.mod-pts-list-browser dd{
-  display: inline;
-}
-
-.mod-pts-list-browser dd{
-	display: inline;
-}
-
-.mod-pts-list-browser dd{
-	display: inline;
-}
-
-.mod-pts-icon-browser{
-	@extend %kani-icon-sprite-pc;
-	width: 17px;
-	height: 17px;
-}
-
-.mod-pts-icon-browser_IE {
-  background-position: 0 0;
-}
-
-.mod-pts-icon-browser_FF {
-  background-position: -40px 0;
-}
-
-.mod-pts-icon-browser_Ch {
-  background-position: -20px 0;
-}
-
-.mod-pts-icon-browser_Sa {
-  background-position: -60px 0;
-}
 
 /* アコーディオン */
 .mod-accordionList > dt { margin-bottom: 15px; }
@@ -136,26 +82,3 @@
 	display: none;
 }
 
-.mod-codeViewList dt{
-	margin-bottom: 10px;
-	background-color: $color-gray95;
-}
-
-.mod-htmlMeans dt{
-	font-size: 18px;
-	font-weight: bold;
-	border-bottom: solid 1px $color-gray90;
-}
-
-.mod-htmlMeans dd{
-	position: relative;
-	margin-left: 3em;
-	&:before{
-		position: absolute;
-		top: 0;
-		right: auto;
-		bottom: auto;
-		left: -1.5em;
-		content: "→"
-	}
-}

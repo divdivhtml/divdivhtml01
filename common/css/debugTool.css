@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/*
+/*	-color.scss
+/*	カラーパレット
+/*----------------------------------------------------*/
+/*
+/*	-kani.scss
+/*	自作のSassライブラリ
+/*----------------------------------------------------*/
+/* clearfix */
+/* IE6/7に対応したclearfix */
+/* アイコンのスプライト表示 */
+.mod-pts-icon-browser {
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+  font-size: 0;
+  background-image: url(../images/bg-icon.png);
+  background-repeat: no-repeat;
+}
+
+/* アイコンのスプライト表示(PC) */
+.mod-pts-icon-browser {
+  background-image: url(../images/bg-icon_pc.png);
+}
+
+/*
+/*	-dedug.scss
+/*	デバッグ用Sass
+/*----------------------------------------------------*/
+/* デバッグ用モジュール */
+.mod-markUp-sample {
+  margin-bottom: 60px;
+}
+.mod-markUp-sample *:first-child {
+  margin-top: 0 !important;
+}
+
+/* コードビュー */
+.mod-codeViewList dt {
+  margin-bottom: 10px;
+  background-color: #F2F2F2;
+}
+
+.mod-htmlMeans dt {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: solid 1px #E6E6E6;
+}
+
+.mod-htmlMeans dd {
+  position: relative;
+  margin-left: 3em;
+}
+.mod-htmlMeans dd:before {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: -1.5em;
+  content: "→";
+}
+
+/* ブラウザ対応一覧 */
+.mod-pts-list-browser {
+  margin-top: 40px;
+  padding: 10px;
+  background-color: #F2F2F2;
+}
+
+.mod-pts-list-browser dt:after {
+  content: "：";
+}
+
+.mod-pts-list-browser dt,
+.mod-pts-list-browser dd {
+  display: inline;
+}
+
+.mod-pts-list-browser dd {
+  display: inline;
+}
+
+.mod-pts-list-browser dd {
+  display: inline;
+}
+
+.mod-pts-icon-browser {
+  width: 17px;
+  height: 17px;
+}
+
+.mod-pts-icon-browser_IE {
+  background-position: 0 0;
+}
+
+.mod-pts-icon-browser_FF {
+  background-position: -40px 0;
+}
+
+.mod-pts-icon-browser_Ch {
+  background-position: -20px 0;
+}
+
+.mod-pts-icon-browser_Sa {
+  background-position: -60px 0;
+}
+
+/* debug */
+.dbg-error {
+  background-color: rgba(197, 18, 54, 0.5);
+}
+
+.pln {
+  color: #000;
+}
+
+.str {
+  color: #009944;
+}
+
+.kwd {
+  color: #005a9e;
+}
+
+.com {
+  color: #a25100;
+}
+
+.typ {
+  color: #7f1184;
+}
+
+.lit {
+  color: #00a497;
+}
+
+.pun, .opn, .clo {
+  color: #666;
+}
+
+.tag {
+  color: #0068b7;
+}
+
+.atn {
+  color: #7f1184;
+}
+
+.atv {
+  color: #009944;
+}
+
+.dec, .var {
+  color: #7f1184;
+}
+
+.fun {
+  color: #c51236;
+}
+
+pre.prettyprint {
+  margin-bottom: 1.5em;
+  padding: 4px;
+  border: 1px solid #999;
+}
+
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+  background: #f2f2f2;
+}
+
+.el-txt_error .pln,
+.el-txt_error .str,
+.el-txt_error .kwd,
+.el-txt_error .com,
+.el-txt_error .typ,
+.el-txt_error .lit,
+.el-txt_error .pun,
+.el-txt_error .opn,
+.el-txt_error .clo,
+.el-txt_error .tag,
+.el-txt_error .atn,
+.el-txt_error .atv,
+.el-txt_error .dec,
+.el-txt_error .var,
+.el-txt_error .fun {
+  color: #c51236;
+}

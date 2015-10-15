@@ -43,5 +43,5 @@ li.L1,li.L3,li.L5,li.L7,li.L9{background:#f2f2f2}
 	.atv,
 	.dec,
 	.var,
-	.fun{ @extend .el-txt_error; }
+	.fun{ color: $color-error; }
 }
