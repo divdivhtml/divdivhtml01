@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見出し（右側にテキストリンク）positionを利用</title>
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+<script src="common/js/jquery-1.11.3.min.js"></script>
+<script src="common/js/common.js"></script>
+<script src="common/js/prettify.js"></script>
+<script src="common/js/lang-css.js"></script>
+</head>
+<body>
+<div id="markup_wrap" class="mod-parts-counter">
+<div class="js-markUp-sample mod-markUp-sample">
+<dl class="mod-pts-list-browser">
+<dt>positionを利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1_position">
+<h1 class="el-heading-text-h_position">見出し1</h1>
+<p class="el-heading-text_position"><a href="#DUMMY">テキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+<div class="el-heading-text-H2_position">
+<h2 class="el-heading-text-h_position">見出し2</h2>
+<p class="el-heading-text_position"><a href="#DUMMY">テキストリンク</a></p>
+<!-- /el-heading-text-H2 --></div>
+
+<div class="el-heading-text-H3_position">
+<h3 class="el-heading-text-h_position">見出し3</h3>
+<p class="el-heading-text_position"><a href="#DUMMY">テキストリンク</a></p>
+<!-- /el-heading-text-H3 --></div>
+
+<!-- /js-markUp-sample --></div>
+
+<h4 class="mod-pts-H3">コード</h4>
+<dl class="mod-codeViewList">
+<dt>HTML（positionを利用）</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;div class=&quot;el-heading-text-H1_position&quot;&gt;
+&lt;h1 class=&quot;el-heading-text-h_position&quot;&gt;見出し1&lt;/h1&gt;
+&lt;p class=&quot;el-heading-text_position&quot;&gt;&lt;a href=&quot;#DUMMY&quot;&gt;テキストリンク&lt;/a&gt;&lt;/p&gt;
+&lt;!-- /el-heading-text-H1 --&gt;&lt;/div&gt;
+
+&lt;div class=&quot;el-heading-text-H2_position&quot;&gt;
+&lt;h2 class=&quot;el-heading-text-h_position&quot;&gt;見出し2&lt;/h2&gt;
+&lt;p class=&quot;el-heading-text_position&quot;&gt;&lt;a href=&quot;#DUMMY&quot;&gt;テキストリンク&lt;/a&gt;&lt;/p&gt;
+&lt;!-- /el-heading-text-H2 --&gt;&lt;/div&gt;
+
+&lt;div class=&quot;el-heading-text-H3_position&quot;&gt;
+&lt;h3 class=&quot;el-heading-text-h_position&quot;&gt;見出し3&lt;/h3&gt;
+&lt;p class=&quot;el-heading-text_position&quot;&gt;&lt;a href=&quot;#DUMMY&quot;&gt;テキストリンク&lt;/a&gt;&lt;/p&gt;
+&lt;!-- /el-heading-text-H3 --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS（positionを利用）(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0;
+}
+
+/* 見出し（右端にテキストリンク） */
+.el-heading-text-H1_position,
+.el-heading-text-H2_position,
+.el-heading-text-H3_position {
+  margin: 20px 0;
+  border-bottom: solid 2px #F2F2F2;
+  position: relative;
+}
+
+.el-heading-text-h_position {
+  margin: 0 105px 0 0;
+}
+
+.el-heading-text_position {
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0.15em;
+  left: auto;
+  margin: 0;
+}
+</pre>
+</dd>
+</dl>
+
+<h4 class="mod-pts-H3">注意</h4>
+
+<p>想定している文字数を上回ると文字同士が重なる場合があります。テキストリンク側の文字数に注意してください。</p>
+<div class="el-heading-text-H1_position">
+<h1 class="el-heading-text-h_position">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text_position"><a href="#DUMMY">テキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+<div class="el-heading-text-H1_position">
+<h1 class="el-heading-text-h_position">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text_position"><a href="#DUMMY">テキストリンクテキストリンクテキストリンクテキストリンクテキストリンクテキストリンクテキストリンクテキストリンクテキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+
+<!-- /#markup_wrap --></div>
+</body>
+</html>

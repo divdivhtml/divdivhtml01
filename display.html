@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<h1>displayプロパティ</h1>
+
+<p><i><b>displayプロパティ</b></i>はブラウザ上での<b>表示形式</b>を指定します。<br>個々の要素にはブラウザCSSでデフォルトのDisplayプロパティ値が設定されています。</p>
+
+<p>表示形式はHTML5以前ですとdiv＝ブロックレベル、span＝インラインなどというように個々のHTMLの要素を関連付けて定義していますが、HTML5以降では関連付けがなくなり、すべてCSSのDisplayプロパティでコントロールするものとして扱います。</p>
+
+
+<h2>インラインとブロック</h2>
+ワープロソフトで文字をたくさん入力すると改行するように、決められた幅を上回ると行を折り返す表示形式を「インライン（インラインレベル）」と呼び、行をまたいで表示されるものを「ブロック（ブロックレベル）」と呼ばれます。
+<p>なお、inlineでは下記のプロパティが無効になります。</p>
+<ul>
+<li>width</li>
+<li>height</li>
+<li>margin-top</li>
+<li>margin-bottom</li>
+</ul>
+
+<p>使用例</p>
+<dl class="dbg-dl">
+<dt><code>display: inline;</code></dt>
+<dd>
+<div class="dbg-noteLine">
+<span class="dbg-bgcSilver dbg-border">行の上に沿った表示形式が「インライン」と呼ばれます。インラインは文字や単語単位で折り返します。行の上に沿った表示形式が「インライン」と呼ばれます。インラインは文字や単語単位で折り返します。行の上に沿った表示形式が「インライン」と呼ばれます。インラインは文字や単語単位で折り返します。</span><br>
+<b class="dbg-bgcMagenta">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</b>
+</div>
+</dd>
+<dt><code>display: block;</code></dt>
+<dd>
+<div class="dbg-noteLine">
+<p class="dbg-bgcPink dbg-border" style="margin: 0 40px 0;">
+行をまたいだ表示形式を「ブロック」と呼びます。行をまたいだ表示形式を「ブロック」と呼びます。行をまたいだ表示形式を「ブロック」と呼びます。行をまたいだ表示形式を「ブロック」と呼びます。行をまたいだ表示形式を「ブロック」と呼びます。</p>
+<p class="dbg-bgcYellow dbg-border" style="width: 300px;margin: 0 40px 40px;">
+ブロックは通常1行に1要素しか表示されません。複数のブロックは積み重なるように表示されます。ブロックは通常1行に1要素しか表示されません。複数のブロックは積み重なるように表示されます。ブロックは通常1行に1要素しか表示されません。複数のブロックは積み重なるように表示されます。ブロックは通常1行に1要素しか表示されません。複数のブロックは積み重なるように表示されます。</p>
+<p class="dbg-bgcCyan dbg-border" style="margin: 50px;padding: 30px;">
+幅・高さ・マージン・パディングが指定できます。幅・高さ・マージン・パディングが指定できます。幅・高さ・マージン・パディングが指定できます。</p>
+</div>
+</dd>
+</dl>
+
+<h2>inline-block</h2>
+<p>ブロック要素が行の上に沿う、inlineとblockの要素を併せ持った表示形式です。inline同様折り返しますが、inlineのように要素が途中で折り返すことはありません。またinlineで使えなかったプロパティが使用できます。</p>
+<dl class="dbg-dl">
+<dt><code>display: inline;</code></dt>
+<dd>
+<div class="dbg-noteLine">
+<p><span class="dbg-inline dbg-bgcRed">あいうえおあいうえお</span><span class="dbg-inline dbg-bgcBlue">かきくけこかきくけこ</span><span class="dbg-inline dbg-bgcRed">さしすせそさしすせそ</span><span class="dbg-inline dbg-bgcBlue">たちつてとたちつてと</span><span class="dbg-inline dbg-bgcRed">なにぬねのなにぬねの</span><span class="dbg-inline dbg-bgcBlue">はひふへほ</span><span class="dbg-inline dbg-bgcRed">まみむめも</span><span class="dbg-inline dbg-bgcBlue">やゆよ</span><span class="dbg-inline dbg-bgcRed">らりるれろ</span><span class="dbg-inline dbg-bgcBlue">わをん</span><span class="dbg-inline dbg-bgcRed">あいうえおあいうえお</span><span class="dbg-inline dbg-bgcBlue">かきくけこかきくけこ</span><span class="dbg-inline dbg-bgcRed">さしすせそさしすせそ</span><span class="dbg-inline dbg-bgcBlue">たちつてとたちつてと</span><span class="dbg-inline dbg-bgcRed">なにぬねのなにぬねの</span><span class="dbg-inline dbg-bgcBlue dbg-fs18px">はひふへほ</span><span class="dbg-inline dbg-bgcRed">まみむめも</span><span class="dbg-inline dbg-bgcBlue">やゆよ</span><span class="dbg-inline dbg-bgcRed">らりるれろ</span><span class="dbg-inline dbg-bgcBlue">わをん</span></p>
+</div>
+<p>display: inline;の場合、背景色はパディング及びフォントの部分のみに適用されます。</p>
+</dd>
+<dt><code>display: inline-block;</code></dt>
+<dd>
+<div class="dbg-noteLine">
+<p><span class="dbg-inlineBlock dbg-bgcRed">あいうえおあいうえお</span><span class="dbg-inlineBlock dbg-bgcBlue">かきくけこかきくけこ</span><span class="dbg-inlineBlock dbg-bgcRed">さしすせそさしすせそ</span><span class="dbg-inlineBlock dbg-bgcBlue">たちつてとたちつてと</span><span class="dbg-inlineBlock dbg-bgcRed">なにぬねのなにぬねの</span><span class="dbg-inlineBlock dbg-bgcBlue">はひふへほ</span><span class="dbg-inlineBlock dbg-bgcRed">まみむめも</span><span class="dbg-inlineBlock dbg-bgcBlue">やゆよ</span><span class="dbg-inlineBlock dbg-bgcRed">らりるれろ</span><span class="dbg-inlineBlock dbg-bgcBlue">わをん</span><span class="dbg-inlineBlock dbg-bgcRed">あいうえおあいうえお</span><span class="dbg-inlineBlock dbg-bgcBlue">かきくけこかきくけこ</span><span class="dbg-inlineBlock dbg-bgcRed">さしすせそさしすせそ</span><span class="dbg-inlineBlock dbg-bgcBlue">たちつてとたちつてと</span><span class="dbg-inlineBlock dbg-bgcRed">なにぬねのなにぬねの</span><span class="dbg-inlineBlock dbg-bgcBlue dbg-fs18px">はひふへほ</span><span class="dbg-inlineBlock dbg-bgcRed">まみむめも</span><span class="dbg-inlineBlock dbg-bgcBlue">やゆよ</span><span class="dbg-inlineBlock dbg-bgcRed">らりるれろ</span><span class="dbg-inlineBlock dbg-bgcBlue">わをん</span></p>
+</div>
+<p>inlineより背景が縦に広がっているのは、span要素がdisplay: inline-block;によって高さのプロパティを得ることにより、現在のline-height値である30pxがデフォルトの高さになったためです。</p>
+<p>また「はひふへほ」が少しずれている理由については「vertical-alignプロパティ」にて解説します。</p>
+</dd>
+<dt><code>display: inline;</code></dt>
+<dd>
+<p>幅・高さ・上下マージンを設定できません。（「かきくけこ」の左右マージンと「なにぬねの」のパディングのみイキ）</p>
+<div class="dbg-noteLine">
+<p><span class="dbg-inline dbg-width3em dbg-height6em dbg-bgcRed">あいうえお</span><span class="dbg-inline dbg-margin10 dbg-width6em dbg-height6em dbg-bgcBlue">かきくけこ</span><span class="dbg-inline dbg-marginTop10 dbg-width3em dbg-height6em dbg-bgcRed">さしすせそ</span><span class="dbg-inline dbg-marginTop30 dbg-width3em dbg-height6em dbg-bgcBlue">たちつてと</span><span class="dbg-inline dbg-marginTop10 dbg-width6em dbg-height6em dbg-bgcRed dbg-padding10">なにぬねの</span><span class="dbg-inline dbg-marginTop10 dbg-width3em dbg-height6em dbg-bgcBlue dbg-fs18px">はひふへほ</span><span class="dbg-inline dbg-marginTop10 dbg-width3em dbg-height6em dbg-bgcRed">まみむめも</span><span class="dbg-inline dbg-marginTop10 dbg-width3em dbg-height1em dbg-bgcBlue">やゆよ</span><span class="dbg-inline dbg-marginTop20 dbg-height6em dbg-bgcRed">らりるれろ</span><span class="dbg-inline dbg-marginTop10 dbg-width3em dbg-bgcBlue">わをん</span></p>
+</div>
+</dd>
+<dt><code>display: inline-block;</code></dt>
+<dd>
+<p>幅・高さ・上下マージンを設定できます。</p>
+<div class="dbg-noteLine">
+<span class="dbg-inlineBlock dbg-width3em dbg-height6em dbg-bgcRed">あいうえお</span><span class="dbg-inlineBlock dbg-margin10 dbg-width6em dbg-height6em dbg-bgcBlue">かきくけこ</span><span class="dbg-inlineBlock dbg-marginTop10 dbg-width3em dbg-height6em dbg-bgcRed">さしすせそ</span><span class="dbg-inlineBlock dbg-marginTop30 dbg-width3em dbg-height6em dbg-bgcBlue">たちつてと</span><span class="dbg-inlineBlock dbg-marginTop10 dbg-width6em dbg-height6em dbg-bgcRed dbg-padding10">なにぬねの</span><span class="dbg-inlineBlock dbg-marginTop10 dbg-width3em dbg-height6em dbg-bgcBlue dbg-fs18px">はひふへほ</span><span class="dbg-inlineBlock dbg-marginTop10 dbg-width3em dbg-height6em dbg-bgcRed">まみむめも</span><span class="dbg-inlineBlock dbg-marginTop10 dbg-width3em dbg-height1_5em dbg-bgcBlue">やゆよ</span><span class="dbg-inlineBlock dbg-marginTop20 dbg-height6em dbg-bgcRed">らりるれろ</span><span class="dbg-inlineBlock dbg-marginTop10 dbg-width3em dbg-bgcBlue">わをん</span>
+</div>
+</dd>
+
+<dt><code>display: none;</code></dt>
+<dd>
+<p class="dbg-bgcPink dbg-border dbg-none dbg-margin40">
+<span class="dbg-inlineBlock dbg-height3em dbg-bgcRed">非表示の要素です。</span>HTMLは存在しています。<span class="dbg-inlineBlock dbg-height3em dbg-bgcRed">非表示の要素です。</span>HTMLは存在しています。<span class="dbg-inlineBlock dbg-height3em dbg-bgcRed">非表示の要素です。</span>HTMLは存在しています。<span class="dbg-inlineBlock dbg-height3em dbg-bgcRed">非表示の要素です。</span>HTMLは存在しています。</p>
+
+
+<p>要素がブラウザ上で表示されなくなります。<br>このテキストの上に、display: none;を適用した非表示の要素があります。ブラウザ上ではその要素が無いように表示されますが、HTMLは存在しています。こちらのスタイルは主にJavascriptでの要素出し分けで活用されます。</p>
+
+</dd>
+
+<dt><code>display: table;</code></dt>
+<dd>
+table要素と同じ表示をします。<br>
+display: table;はさまざまな活用法が存在するため、別項を設けて解説します。
+</dd>
+
+<dt><code>display: inline-table;</code></dt>
+<dd>
+<p>table要素が行の上に沿う、inlineとtableの要素を併せ持った表示形式です。</p>
+</dd>
+
+<dt><code>display: table-row;</code></dt>
+<dd>tr要素と同じ表示をします。</dd>
+<dt><code>display: table-column-group;</code></dt>
+<dd>colgroup要素と同じ表示をします。</dd>
+<dt><code>display: table-column;</code></dt>
+<dd>col要素と同じ表示をします。</dd>
+<dt><code>display: table-cell;</code></dt>
+<dd>td要素と同じ表示をします。</dd>
+<dt><code>display: table-caption;</code></dt>
+<dd>caption要素と同じ表示をします。</dd>
+<dt><code>display: inherit;</code></dt>
+<dd>親要素の値を継承します。</dd>
+</dl>
+
+<h2>継承について</h2>
+<p>
+displayプロパティは子要素に継承されません。しかし親要素がdisplay: none;のときは、子要素も表示されなくなります。
+</p>
+
+</div>
+</body>
+</html>

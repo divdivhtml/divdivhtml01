@@ -1,0 +1,47 @@
+.pln{color:$color-black}
+
+.str{color:$color-green}
+
+.kwd{color: $color-keyword}
+
+.com{color:$color-comment}
+
+.typ{color:$color-purple}
+
+.lit{color: $color-literal}
+
+.pun,.opn,.clo{color:$color-gray40}
+
+.tag{color: $color-blue}
+
+.atn{color:$color-purple}
+
+.atv{color:$color-green}
+
+.dec,.var{color:$color-purple}
+
+.fun{color:$color-error}
+
+pre.prettyprint{margin-bottom: 1.5em;padding:4px;border:1px solid $color-gray60}
+
+ol.linenums{margin-top:0;margin-bottom:0}
+
+li.L1,li.L3,li.L5,li.L7,li.L9{background:#f2f2f2}
+
+.el-txt_error{
+	.pln,
+	.str,
+	.kwd,
+	.com,
+	.typ,
+	.lit,
+	.pun,
+	.opn,
+	.clo,
+	.tag,
+	.atn,
+	.atv,
+	.dec,
+	.var,
+	.fun{ @extend .el-txt_error; }
+}

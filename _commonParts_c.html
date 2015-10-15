@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+<script src="common/js/jquery-1.11.3.min.js"></script>
+<script src="common/js/common.js"></script>
+</head>
+<body>
+<div id="wrapper" class="mod-parts-counter">
+
+<h1 class="mod-pts-H1">パーツリスト（注意事項）</h1>
+
+<p>それぞれのエレメントを適用した場合に起こりうる崩れをリストアップしています。</p>
+<h2 class="mod-pts-H2 is-countable">見出しの注意事項</h2>
+
+
+<h3 class="mod-pts-H3 is-countable" id="anc01">見出し（ライン）の注意事項</h3>
+
+<p><span class="el-txt-bullet-notes">左側と下側へ異なる色のボーダーを適用した場合、ブラウザによってコーナーの処理方法が異なって見えます。</span></p>
+<h1 class="el-heading-borderLeft el-heading-borderBottom">見出し1</h1>
+
+<h3 class="mod-pts-H3 is-countable" id="anc02">見出し（右端にテキストリンク）の注意事項</h3>
+
+<p><span class="el-txt-bullet-notes">文字があふれた場合の処理方法が異なります。どのあふれ方が最適か案件ごとに確認してください。</span></p>
+<dl class="mod-pts-list-browser">
+<dt>display:table;, display:table-cell;を利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>8~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1">
+<h1 class="el-heading-text-h">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text"><a href="#DUMMY">テキストリンクテキストリンクテキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+<dl class="mod-pts-list-browser">
+<dt>display:inline-block;を利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1_inline">
+<h1 class="el-heading-text-h_inline">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text_inline"><a href="#DUMMY">テキストリンクテキストリンクテキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+
+<dl class="mod-pts-list-browser">
+<dt>floatを利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1_float">
+<h1 class="el-heading-text-h_float">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text_float"><a href="#DUMMY">テキストリンクテキストリンクテキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+
+<dl class="mod-pts-list-browser">
+<dt>positionを利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1_position">
+<h1 class="el-heading-text-h_position">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text_position"><a href="#DUMMY">テキストリンクテキストリンクテキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+
+<h2 class="mod-pts-H2 is-countable">ボックスの注意事項</h2>
+<h3 class="mod-pts-H3 is-countable" id="anc03">二重線ボックスの注意事項</h3>
+
+<dl class="mod-pts-list-browser">
+<dt>box-shadowプロパティを使用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>9~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<p>複数のbox-shadowプロパティが1つの要素で同時に存在した場合、もっとも優先度の高いプロパティしか適用されません。こちらの例では、二重線ボックスのプロパティが優先され、ドロップシャドウのプロパティは打ち消されています。</p>
+<div class="el-box03 el-boxDoubleFrame_shadow el-boxShadow">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<p>div要素を二重にし、ドロップシャドウボックス(.el-boxShadow)を適用すれば一見実装可能に見えますが、この場合インナーシャドウボックス(.el-boxShadowInset)は想定される実装が行われません。</p>
+<div class="el-marginBottom20 el-boxShadow">
+<div class="el-box03 el-boxDoubleFrame_shadow">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<div class="el-marginBottom20 el-boxShadowInset">
+<div class="el-box03 el-boxDoubleFrame_shadow">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<p>各セレクタに存在するbox-shadowプロパティをマージしたセレクタにスタイルを適用します。</p>
+<div class="el-box02 el-boxDoubleFrame_shadow el-boxShadow">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<div class="el-box02 el-boxDoubleFrame_shadow el-boxShadowInset">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<dl class="mod-pts-list-browser">
+<dt>擬似要素:beforeを使用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>8~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+
+<div class="el-box03 el-boxDoubleFrame_pseudo">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<p>ドロップシャドウボックスのbox-shadowプロパティが優先され適用されます。</p>
+<div class="el-box03 el-boxDoubleFrame_pseudo el-boxShadow">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<p>インナーシャドウボックスのbox-shadowプロパティが優先され適用されますが、この場合box-shadowがボーダーの内側からのみ生成されることに留意しましょう。</p>
+<div class="el-box03 el-boxDoubleFrame_pseudo el-boxShadowInset">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<h3 class="mod-pts-H3 is-countable" id="anc04">吹き出し付きボックスの注意事項</h3>
+
+<dl class="mod-pts-list-browser">
+<dt>擬似要素とボーダーを使用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>8~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-box01 el-boxFrame el-boxRound el-boxBalloon_border">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<!-- /el-box01 --></div>
+
+<p><strong class="el-txt-bullet-notes el-txt_error">box-shadowをつけると崩れます</strong></p>
+
+<div class="el-box02 el-boxShadow el-boxRound el-boxBalloon_border">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<!-- /el-box02 --></div>
+
+<div class="el-box03 el-boxFrame el-boxShadow el-boxRound el-boxBalloon_border">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<!-- /el-box03 --></div>
+
+<dl class="mod-pts-list-browser">
+<dt>擬似要素と特殊文字を使用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>8~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<p>極力差異が小さくなるよう調整していますが、ブラウザ間での差が若干起こります。</p>
+<div class="el-box01 el-boxFrame el-boxRound el-boxBalloon_character">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<!-- /el-box01 --></div>
+
+<div class="el-box02 el-boxShadow el-boxRound el-boxBalloon_character">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<!-- /el-box02 --></div>
+
+<div class="el-box03 el-boxFrame el-boxShadow el-boxRound el-boxBalloon_character">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<!-- /el-box03 --></div>
+
+<dl class="mod-pts-list-browser">
+<dt>transformプロパティを使用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>9~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<p><strong class="el-txt-bullet-notes el-txt_error">矢印が大きすぎると、矢印のマスクと内部の要素が重なる場合があります。</strong></p>
+<div class="el-box03 el-boxFrame el-boxShadow el-boxRound el-boxBalloon_transform">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名</p>
+<!-- /el-box03 --></div>
+
+<p>吹き出しボックスの内側にdivを設置し、それぞれにz-indexを適用すると崩れを回避できます。</p>
+<div class="el-box03 el-boxFrame el-boxShadow el-boxRound el-boxBalloon_transform">
+<div class="el-boxBalloon_transform_inner">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名著者名</p>
+<!-- /el-boxBalloon_transform_inner --></div>
+<!-- /el-box03 --></div>
+
+
+
+<!-- /#markup_wrap --></div>
+</body>
+の注意事項</html>

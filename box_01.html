@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>基本的なボックス</title>
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+<script src="common/js/jquery-1.11.3.min.js"></script>
+<script src="common/js/common.js"></script>
+<script src="common/js/prettify.js"></script>
+<script src="common/js/lang-css.js"></script>
+</head>
+<body>
+<div id="markup_wrap" class="mod-parts-counter">
+<div class="js-markUp-sample mod-markUp-sample">
+<div class="el-box01 el-marginBottom20">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<!-- /el-box01 --></div>
+
+<div class="el-box02 el-marginBottom20">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box02 --></div>
+
+<div class="el-box01 el-boxFrame el-marginBottom20">
+<p class="mod-box-products_title">商品名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box01 --></div>
+
+<div class="el-box02 el-boxFrame el-marginBottom20">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<!-- /el-box02 --></div>
+
+<!-- /js-markUp-sample --></div>
+
+<h4 class="mod-pts-H3">コード</h4>
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;!-- ボックス（白） --&gt;
+&lt;div class=&quot;el-box01 el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-books_title&quot;&gt;タイトル&lt;/p&gt;
+&lt;p class=&quot;mod-box-books_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-books_author&quot;&gt;著者名&lt;/p&gt;
+&lt;!-- /el-box01 --&gt;&lt;/div&gt;
+
+&lt;!-- ボックス（白）枠線付 --&gt;
+&lt;div class=&quot;el-box02 el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box02 --&gt;&lt;/div&gt;
+
+&lt;!-- ボックス（赤） --&gt;
+&lt;div class=&quot;el-box01 el-boxFrame el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;商品名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box01 --&gt;&lt;/div&gt;
+
+&lt;!-- ボックス（赤）枠線付 --&gt;
+&lt;div class=&quot;el-box02 el-boxFrame el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-books_title&quot;&gt;タイトル&lt;/p&gt;
+&lt;p class=&quot;mod-box-books_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-books_author&quot;&gt;著者名&lt;/p&gt;
+&lt;!-- /el-box02 --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box01,
+.el-box02 {
+  padding: 13px;
+}
+
+.el-boxFrame {
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* ボックス1（白） */
+.el-box01 {
+  background-color: #F7F7F7;
+}
+
+.el-boxFrame.el-box01 {
+  border-color: #CCC;
+}
+
+/* ボックス2（赤） */
+.el-box02 {
+  background-color: #fef1f4;
+}
+
+.el-boxFrame.el-box02 {
+  border-color: crimson;
+}
+
+/* ボックス内モジュール */
+.mod-box-books_title,
+.mod-box-products_title {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.mod-box-books_text,
+.mod-box-products_text {
+  margin: 0;
+}
+
+.mod-box-books_author,
+.mod-box-products_price {
+  margin: 15px 0 0;
+}
+</pre>
+</dd>
+</dl>
+
+
+
+<!-- /#markup_wrap --></div>
+</body>
+</html>

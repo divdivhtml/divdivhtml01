@@ -1,0 +1,10 @@
+
+//ロード時にiframe.js-iframePreOpenの大きさを調整する
+
+<iframe src="/test.html" frameborder="0" scrolling="no" class="js-iframePreOpen"></iframe>
+
+
+
+//開閉リンクでiframeの大きさを調整する
+
+<div class="js-iframeOpen"><iframe src="/test.html" frameborder="0" scrolling="no"></iframe><!-- /js-iframeOpen --></div>

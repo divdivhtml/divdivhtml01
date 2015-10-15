@@ -1,0 +1,94 @@
+/*
+/*	-color.scss
+/*	カラーパレット
+/*----------------------------------------------------*/
+
+$color-red: rgb(220,20,60);
+
+$color-green: rgb(0,153,68);
+
+$color-blue: rgb(0,104,183);
+
+$color-orange: rgb(238,120,0);
+
+$color-pink: rgb(245,178,178);
+
+$color-purple: rgb(127,17,132);
+
+$color-blueGreen: rgb(0,164,151);
+
+$color-cyan: rgb(0,161,233);
+
+$color-magenta: rgb(228,0,127);
+
+$color-yellow: rgb(255,220,0);
+
+$color-l-red: lighten($color-red,50);
+
+$color-l-green: lighten($color-green,50);
+
+$color-l-blue: lighten($color-blue,60);
+
+$color-l-orange: lighten($color-orange,50);
+
+$color-l-pink: lighten($color-pink,50);
+
+$color-l-purple: lighten($color-purple,50);
+
+$color-l-cyan: lighten($color-cyan,50);
+
+$color-l-magenta: lighten($color-magenta,50);
+
+$color-l-yellow: lighten($color-yellow,50);
+
+$color-white: #FFF;
+
+$color-gray97: #F7F7F7;
+
+$color-gray95: #F2F2F2;
+
+$color-gray90: #E6E6E6;
+
+$color-gray80: #CCC;
+
+$color-gray70: #B3B3B3;
+
+$color-gray60: #999;
+
+$color-gray40: #666;
+
+$color-gray40: #666;
+
+$color-gray20: #333;
+
+$color-black: #000;
+
+$color-link: darken($color-blue,10);
+
+$color-keyword: darken($color-blue,5);
+
+$color-link_h: darken($color-red,10);
+
+$color-error: darken($color-red,5);
+
+$color-comment: darken($color-orange,15);
+
+$color-literal: $color-blueGreen;
+
+$color-attention: darken($color-orange,5);
+
+$color-shadow: transparentize( $color-black, 0.75);
+
+$kani-colorMap:(
+	"Red":$color-red,
+	"Green":$color-green,
+	"Blue":$color-blue,
+	"Silver":$color-gray80,
+	"Orange":$color-orange,
+	"Pink":$color-pink,
+	"Purple":$color-purple,
+	"Cyan":$color-cyan,
+	"Magenta":$color-magenta,
+	"Yellow":$color-yellow,
+);
+

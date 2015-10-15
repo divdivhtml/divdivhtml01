@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見出し（右側にテキストリンク）display:tableを利用</title>
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+<script src="common/js/jquery-1.11.3.min.js"></script>
+<script src="common/js/common.js"></script>
+<script src="common/js/prettify.js"></script>
+<script src="common/js/lang-css.js"></script>
+</head>
+<body>
+<div id="markup_wrap" class="mod-parts-counter">
+<div class="js-markUp-sample mod-markUp-sample">
+<dl class="mod-pts-list-browser">
+<dt>display:table;, display:table-cell;を利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>8~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1_inline">
+<h1 class="el-heading-text-h_inline">見出し1</h1>
+<p class="el-heading-text_inline"><a href="#DUMMY">テキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+<div class="el-heading-text-H2_inline">
+<h2 class="el-heading-text-h_inline">見出し2</h2>
+<p class="el-heading-text_inline"><a href="#DUMMY">テキストリンク</a></p>
+<!-- /el-heading-text-H2 --></div>
+
+<div class="el-heading-text-H3_inline">
+<h3 class="el-heading-text-h_inline">見出し3</h3>
+<p class="el-heading-text_inline"><a href="#DUMMY">テキストリンク</a></p>
+<!-- /el-heading-text-H3 --></div>
+<!-- /js-markUp-sample --></div>
+
+<h4 class="mod-pts-H3">コード</h4>
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;div class=&quot;el-heading-text-H1&quot;&gt;
+&lt;h1 class=&quot;el-heading-text-h&quot;&gt;見出し1&lt;/h1&gt;
+&lt;p class=&quot;el-heading-text&quot;&gt;&lt;a href=&quot;#DUMMY&quot;&gt;テキストリンク&lt;/a&gt;&lt;/p&gt;
+&lt;!-- /el-heading-text-H1 --&gt;&lt;/div&gt;
+
+&lt;div class=&quot;el-heading-text-H2&quot;&gt;
+&lt;h2 class=&quot;el-heading-text-h&quot;&gt;見出し2&lt;/h2&gt;
+&lt;p class=&quot;el-heading-text&quot;&gt;&lt;a href=&quot;#DUMMY&quot;&gt;テキストリンク&lt;/a&gt;&lt;/p&gt;
+&lt;!-- /el-heading-text-H2 --&gt;&lt;/div&gt;
+
+&lt;div class=&quot;el-heading-text-H3&quot;&gt;
+&lt;h3 class=&quot;el-heading-text-h&quot;&gt;見出し3&lt;/h3&gt;
+&lt;p class=&quot;el-heading-text&quot;&gt;&lt;a href=&quot;#DUMMY&quot;&gt;テキストリンク&lt;/a&gt;&lt;/p&gt;
+&lt;!-- /el-heading-text-H3 --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0;
+}
+
+/* 見出し（右端にテキストリンク） */
+.el-heading-text-H1,
+.el-heading-text-H2,
+.el-heading-text-H3 {
+  display: table;
+  width: 100%;
+  margin: 20px 0;
+  border-bottom: solid 2px #F2F2F2;
+}
+
+.el-heading-text-h {
+  display: table-cell;
+  margin: 0;
+  vertical-align: bottom;
+}
+
+.el-heading-text {
+  display: table-cell;
+  margin: 0;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  text-align: right;
+  vertical-align: bottom;
+}
+</pre>
+</dd>
+</dl>
+
+
+<h4 class="mod-pts-H3">注意</h4>
+
+<p><span class="el-txt-bullet-notes">文字があふれた場合の処理方法が異なります。どのあふれ方が最適か案件ごとに確認してください。</span></p>
+<dl class="mod-pts-list-browser">
+<dt>display:table;, display:table-cell;を利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>8~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1">
+<h1 class="el-heading-text-h">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text"><a href="#DUMMY">テキストリンクテキストリンクテキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+<dl class="mod-pts-list-browser">
+<dt>display:inline-block;を利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>7~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1_inline">
+<h1 class="el-heading-text-h_inline">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text_inline"><a href="#DUMMY">テキストリンクテキストリンクテキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+
+<dl class="mod-pts-list-browser">
+<dt>floatを利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>6~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1_float">
+<h1 class="el-heading-text-h_float">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text_float"><a href="#DUMMY">テキストリンクテキストリンクテキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+
+<dl class="mod-pts-list-browser">
+<dt>positionを利用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>6~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-heading-text-H1_position">
+<h1 class="el-heading-text-h_position">見出し1見出し1見出し1見出し1見出し1見出し1見出し1見出し1</h1>
+<p class="el-heading-text_position"><a href="#DUMMY">テキストリンクテキストリンクテキストリンク</a></p>
+<!-- /el-heading-text-H1 --></div>
+
+<!-- /#markup_wrap --></div>
+</body>
+</html>

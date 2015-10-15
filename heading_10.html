@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見出しテキスト</title>
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+<script src="common/js/jquery-1.11.3.min.js"></script>
+<script src="common/js/common.js"></script>
+<script src="common/js/prettify.js"></script>
+<script src="common/js/lang-css.js"></script>
+</head>
+<body>
+<div id="markup_wrap" class="mod-parts-counter">
+<div class="js-markUp-sample mod-markUp-sample">
+<p>「見出しテキスト」とは、デザイン的には「見出し」ですが、見出し要素を用いないマークアップです。モーダル内部など、ページ本文のマークアップとは関連付けない領域で見出しを作る場合に使います。</p>
+
+<p class="el-headingH1">見出しテキスト1</p>
+<p class="el-headingH2">見出しテキスト2</p>
+<p class="el-headingH3">見出しテキスト3</p>
+<p class="el-headingH4">見出しテキスト4</p>
+<p class="el-headingH5">見出しテキスト5</p>
+<p class="el-headingH6">見出しテキスト6</p>
+
+<!-- /js-markUp-sample --></div>
+
+<h4 class="mod-pts-H3">コード</h4>
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;p class=&quot;el-headingH1&quot;&gt;見出しテキスト1&lt;/p&gt;
+&lt;p class=&quot;el-headingH2&quot;&gt;見出しテキスト2&lt;/p&gt;
+&lt;p class=&quot;el-headingH3&quot;&gt;見出しテキスト3&lt;/p&gt;
+&lt;p class=&quot;el-headingH4&quot;&gt;見出しテキスト4&lt;/p&gt;
+&lt;p class=&quot;el-headingH5&quot;&gt;見出しテキスト5&lt;/p&gt;
+&lt;p class=&quot;el-headingH6&quot;&gt;見出しテキスト6&lt;/p&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* 見出しテキスト */
+.el-headingH1,
+.el-headingH2,
+.el-headingH3,
+.el-headingH4,
+.el-headingH5,
+.el-headingH6 {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.el-headingH1 {
+  font-size: 2em;
+}
+
+.el-headingH2 {
+  font-size: 1.5em;
+}
+
+.el-headingH3 {
+  font-size: 1.17em;
+}
+
+.el-headingH4 {
+  font-size: 1em;
+}
+
+.el-headingH5 {
+  font-size: 0.83em;
+}
+
+.el-headingH6 {
+  font-size: 0.67em;
+}
+</pre>
+</dd>
+</dl>
+<!-- /#markup_wrap --></div>
+</body>
+</html>

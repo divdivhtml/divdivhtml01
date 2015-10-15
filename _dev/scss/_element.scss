@@ -1,0 +1,842 @@
+/*
+/*	-element.scss
+/*	_commonParts.htmlで使われているエレメントリストのSass
+/*----------------------------------------------------*/
+
+/* 汎用 */
+
+/* 汎用マージン */
+.el-marginTop00{ margin-top: 0 !important; }
+
+.el-marginBottom20{ margin-bottom: 20px !important; }
+
+
+//見出しのボーダーカラー設定
+$color-heading-bd-left: $color-green;
+$color-heading-bd-bottom: $color-gray80;
+
+
+/* 見出し（左側ボーダー） */
+.el-heading-borderLeft{
+	padding-left: 10px;
+	border-left: solid 4px $color-heading-bd-left;
+}
+
+/* 見出し（下側ボーダー） */
+.el-heading-borderBottom{
+	border-bottom: solid 2px $color-heading-bd-bottom;
+}
+
+/* 見出し（L字ボーダー） */
+/* 背景画像を使用&#9312; */
+.el-heading-borderBottom_bg{
+	padding-bottom: 2px;
+	background: url(..//images/bg-heding-bd-bottom.png) left bottom repeat-x;
+}
+
+/* 外側にdivを使用&#9312; */
+.el-heading-wrap_borderLeft{
+	border-left: solid 4px $color-heading-bd-left;
+	.el-heading-borderBottom{
+		padding-left: 10px;
+	}
+}
+
+/* 背景画像を使用&#9313; */
+.el-heading-borderLeft_bg{
+	padding-left: 14px;
+	background: url(..//images/bg-heding-bd-left.png) left top repeat-y;
+}
+
+/* 外側にdivを使用&#9313; */
+.el-heading-wrap_borderBottom{
+	margin-bottom: 20px;
+	border-bottom: solid 2px $color-heading-bd-bottom;
+	.el-heading-borderLeft{
+		margin-bottom: 0;
+	}
+}
+
+/* 見出し（右端にテキストリンク） */
+.el-heading-text-H1,
+.el-heading-text-H2,
+.el-heading-text-H3{
+	display: table;
+	width: 100%;
+	margin: 20px 0;
+	border-bottom: solid 2px $color-heading-bd-bottom;
+}
+
+.el-heading-text-h{
+	display: table-cell;
+	margin: 0;
+	vertical-align: bottom;
+}
+
+.el-heading-text{
+	display: table-cell;
+	margin: 0;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	text-align: right;
+	vertical-align: bottom;
+}
+
+.el-heading-text-H1_inline,
+.el-heading-text-H2_inline,
+.el-heading-text-H3_inline{
+	margin: 20px 0;
+	border-bottom: solid 2px $color-heading-bd-bottom;
+}
+
+/* 改行コードは半角スペース1つ≒0.35em分空くので注意 */
+.el-heading-text-h_inline,
+.el-heading-text_inline{
+	display: inline-block;
+	margin: 0;
+	vertical-align: bottom;
+}
+
+.el-heading-text-h_inline{ width: 70%; }
+
+.el-heading-text_inline{
+	width: 28%;
+	padding-left: 2%;
+	margin-left: -0.35em;
+	padding-bottom: 2px;
+	text-align: right;
+	&.dbg-error{
+		margin-left: 0;
+	}
+}
+
+.el-heading-text-H1_float,
+.el-heading-text-H2_float,
+.el-heading-text-H3_float{
+	margin: 20px 0;
+	border-bottom: solid 2px $color-heading-bd-bottom;
+	@extend %kani-clearfixOld;
+}
+
+.el-heading-text-h_float{
+	float: left;
+	margin: 0;
+}
+
+.el-heading-text_float{
+	float: right;
+	margin: 0;
+}
+
+.el-heading-text-H1_float .el-heading-text-h{ margin-bottom: -0.65em; }
+
+.el-heading-text-H2_float .el-heading-text-h{ margin-bottom: -0.4em; }
+
+.el-heading-text-H3_float .el-heading-text-h{ margin-bottom: -0.083em; }
+
+.el-heading-text-H1_float .el-heading-text_float{
+	padding-top: 1.3em;
+}
+
+.el-heading-text-H2_float .el-heading-text_float{
+	padding-top: 0.6em;
+}
+
+.el-heading-text-H3_float .el-heading-text_float{
+	padding-top: 0.1em;
+}
+
+.el-heading-text-H1_position,
+.el-heading-text-H2_position,
+.el-heading-text-H3_position{
+	margin: 20px 0;
+	border-bottom: solid 2px $color-heading-bd-bottom;
+	position: relative;
+}
+
+.el-heading-text-h_position{
+	margin: 0 115px 0 0;
+}
+
+.el-heading-text_position{
+	position: absolute;
+	top: auto;
+	right: 0;
+	bottom: 0.15em;
+	left: auto;
+	width: 105px;
+	margin: 0;
+}
+
+
+
+/* 見出しテキスト */
+.el-headingH1,
+.el-headingH2,
+.el-headingH3,
+.el-headingH4,
+.el-headingH5,
+.el-headingH6{
+	margin: 20px 0;
+	font-weight: bold;
+}
+
+.el-headingH1{
+	font-size: 2em;
+}
+
+.el-headingH2{
+	font-size: 1.5em;
+}
+
+.el-headingH3{
+	font-size: 1.17em;
+}
+
+.el-headingH4{
+	font-size: 1em;
+}
+
+.el-headingH5{
+	font-size: 0.83em;
+}
+
+.el-headingH6{
+	font-size: 0.67em;
+}
+
+/* ボックスモデル */
+
+%el-box{
+	padding: 13px;
+}
+
+// ボックスの色分け
+/* ボックス1（白） */
+%el-box_white{
+	background-color: $color-gray97;
+	&.el-boxFrame{
+		border-color: $color-gray80;
+	}
+	&.el-boxDoubleFrame_shadow{
+		box-shadow: 0 0 0 3px $color-gray80 inset, 0 0 0 4px $color-gray97 inset, 0 0 0 5px $color-gray80 inset;
+	}
+	&.el-boxDoubleFrame_shadow.el-boxShadow{
+		box-shadow: 1px 1px 4px 1px $color-shadow, 0 0 0 3px $color-gray80 inset, 0 0 0 4px $color-gray97 inset, 0 0 0 5px $color-gray80 inset;
+	}
+	&.el-boxDoubleFrame_shadow.el-boxShadowInset{
+		box-shadow: 0 0 10px 6px $color-shadow inset, 0 0 0 3px $color-gray80 inset, 0 0 0 4px $color-gray97 inset, 0 0 0 5px $color-gray80 inset;
+	}
+	&.el-boxDoubleFrame_pseudo{
+		border-color: $color-gray80;
+		&:before{
+		border-color: $color-gray80;
+		}
+	}
+	&.el-boxBalloon_sprite{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -2px;
+		}
+	}
+	&.el-boxBalloon_sprite.el-boxFrame{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -18px;
+		}
+	}
+	&.el-boxBalloon_sprite.el-boxShadow{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -34px;
+		}
+	}
+	&.el-boxBalloon_sprite.el-boxShadow.el-boxFrame{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -50px;
+		}
+	}
+	&.el-boxBalloon_border{
+		&:before{
+			border-top-color: $color-gray80;
+		}
+		&:after{
+			border-top-color: $color-gray97;
+		}
+	}
+	&.el-boxBalloon_character{
+		&:before{
+			color: $color-gray80;
+		}
+	}
+	&.el-boxFrame.el-boxBalloon_character{
+		&:after{
+			color: $color-gray97;
+		}
+	}
+	&.el-boxBalloon_transform{
+		&:before,
+		&:after{
+			background-color: $color-gray97;
+		}
+		&.el-boxFrame:before{
+			box-shadow: 0 0 0 1px $color-gray80;
+		}
+		&.el-boxShadow.el-boxFrame:before{
+			box-shadow: 1px 1px 4px 2px $color-shadow, 0 0 0 1px $color-gray90;
+		}
+	}
+}
+
+/* ボックス2（桃） */
+%el-box_red{
+	background-color: $color-l-red;
+	&.el-boxFrame{
+		border-color: $color-red;
+	}
+	&.el-boxDoubleFrame_shadow{
+		box-shadow: 0 0 0 3px $color-red inset, 0 0 0 4px $color-l-red inset, 0 0 0 5px $color-red inset;
+	}
+	&.el-boxDoubleFrame_shadow.el-boxShadow{
+		box-shadow: 1px 1px 4px 1px $color-shadow, 0 0 0 3px $color-red inset, 0 0 0 4px $color-l-red inset, 0 0 0 5px $color-red inset;
+	}
+	&.el-boxDoubleFrame_shadow.el-boxShadowInset{
+		box-shadow: 0 0 10px 6px $color-shadow inset, 0 0 0 3px $color-red inset, 0 0 0 4px $color-l-red inset, 0 0 0 5px $color-red inset;
+	}
+	&.el-boxDoubleFrame_pseudo{
+		border-color: $color-red;
+		&:before{
+		border-color: $color-l-red;
+		}
+	}
+	&.el-boxBalloon_sprite{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -66px;
+		}
+	}
+	&.el-boxBalloon_sprite.el-boxFrame{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -82px;
+		}
+	}
+	&.el-boxBalloon_sprite.el-boxShadow{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -98px;
+		}
+	}
+	&.el-boxBalloon_sprite.el-boxShadow.el-boxFrame{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -114px;
+		}
+	}
+	&.el-boxBalloon_border{
+		&:before{
+			border-top-color: $color-red;
+		}
+		&:after{
+			border-top-color: $color-l-red;
+		}
+	}
+	&.el-boxBalloon_character{
+		&:before{
+			color: $color-red;
+		}
+		&:after{
+			color: $color-l-red;
+		}
+	}
+	&.el-boxBalloon_transform{
+		&:before,
+		&:after{
+			background-color: $color-l-red;
+		}
+		&.el-boxFrame:before{
+			box-shadow: 0 0 0 1px $color-red;
+		}
+		&.el-boxShadow.el-boxFrame:before{
+			box-shadow: 1px 1px 4px 2px $color-shadow, 0 0 0 1px $color-red;
+		}
+	}
+}
+
+/* ボックス3（水色） */
+%el-box_blue{
+	background-color: $color-l-blue;
+	&.el-boxFrame{
+		border-color: $color-blue;
+	}
+	&.el-boxDoubleFrame_shadow{
+		box-shadow: 0 0 0 3px $color-blue inset, 0 0 0 4px $color-l-blue inset, 0 0 0 5px $color-blue inset;
+	}
+/* 崩れシミュレーションのため実装せず */
+/*
+	&.el-boxDoubleFrame_shadow.el-boxShadow{
+		box-shadow: 1px 1px 4px 1px $color-shadow, 0 0 0 3px $color-blue inset, 0 0 0 4px $color-l-blue inset, 0 0 0 5px $color-blue inset;
+	}
+	&.el-boxDoubleFrame_shadow.el-boxShadowInset{
+		box-shadow: 0 0 10px 6px $color-shadow inset, 0 0 0 3px $color-blue inset, 0 0 0 4px $color-l-blue inset, 0 0 0 5px $color-blue inset;
+	}
+*/
+	&.el-boxDoubleFrame_pseudo{
+		border-color: $color-blue;
+		&:before{
+		border-color: $color-l-blue;
+		}
+	}
+	&.el-boxBalloon_sprite{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -130px;
+		}
+	}
+	&.el-boxBalloon_sprite.el-boxFrame{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -146px;
+		}
+	}
+	&.el-boxBalloon_sprite.el-boxShadow{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -162px;
+		}
+	}
+	&.el-boxBalloon_sprite.el-boxShadow.el-boxFrame{
+		& .el-boxBalloon_sprite_arrow{
+			background-position: 0 -178px;
+		}
+	}
+	&.el-boxBalloon_border{
+		&:before{
+			border-top-color: $color-blue;
+		}
+		&:after{
+			border-top-color: $color-l-blue;
+		}
+	}
+	&.el-boxBalloon_character{
+		&:before{
+			color: $color-blue;
+		}
+		&:after{
+			color: $color-l-blue;
+		}
+	}
+	&.el-boxBalloon_transform{
+		&:before,
+		&:after{
+			background-color: $color-l-blue;
+		}
+		&.el-boxFrame:before{
+			box-shadow: 0 0 0 1px $color-blue;
+		}
+		&.el-boxShadow.el-boxFrame:before{
+			box-shadow: 1px 1px 4px 2px $color-shadow, 0 0 0 1px $color-blue;
+		}
+	}
+}
+
+
+.el-boxFrame{
+	border-style: solid;
+	border-width: 1px;
+}
+
+.el-boxRound{
+	border-radius: 10px;
+}
+
+.el-boxShadow{
+	box-shadow: 1px 1px 4px 1px $color-shadow;
+}
+
+.el-boxShadowInset{
+	box-shadow: 0 0 8px 1px $color-shadow inset;
+}
+
+/* スタイルをマージ（検証のため.el-box02のみで実装） */
+.el-box02.el-boxShadow.el-boxShadowInset{
+	box-shadow: 1px 1px 4px 1px $color-shadow,0 0 8px 1px $color-shadow inset;
+}
+
+.el-boxBalloon_border{
+	position: relative;
+}
+
+.el-boxBalloon_character{
+	position: relative;
+}
+
+.el-box01{
+	@extend %el-box;
+	@extend %el-box_white;
+}
+
+.el-box02{
+	@extend %el-box;
+	@extend %el-box_red;
+}
+
+.el-box03{
+	@extend %el-box;
+	@extend %el-box_blue;
+}
+
+/* 二重線ボックス */
+
+.el-boxDoubleFrame{
+	padding: 1px;
+	border-style: solid;
+	border-width: 3px;
+}
+
+.el-boxDoubleFrame_css{
+	border-style: double;
+	border-width: 5px;
+}
+
+.el-boxDoubleFrame_shadow{
+	padding: 18px;
+}
+.el-boxDoubleFrame_pseudo{
+	position: relative;
+	z-index: 1;
+	border-style: solid;
+	border-width: 5px;
+}
+
+.el-boxDoubleFrame_pseudo:before{
+	content: "";
+	display: block;
+	position: absolute;
+	top: -2px;
+	right: auto;
+	bottom: auto;
+	left: -2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	border-style: solid;
+	border-width: 1px;
+	width: 100%;
+	min-height: 100%;
+	z-index: 2;
+}
+/* 吹き出し付きボックス */
+.el-boxBalloon_sprite,
+.el-boxBalloon_border,
+.el-boxBalloon_character,
+.el-boxBalloon_transform{
+	position: relative;
+}
+
+.el-boxBalloon_sprite_arrow{
+	position: absolute;
+	display: block;
+	top: auto;
+	right: auto;
+	bottom: -14px;
+	left: 50%;
+	width: 16px;
+	height: 14px;
+	margin-left: -8px;
+	background-image: url(../images/bg-balloonarrow.png);
+	background-repeat: no-repeat;
+}
+
+.el-boxFrame.el-boxBalloon_border:before{
+	content: "";
+	position: absolute;
+	display: block;
+	top: auto;
+	right: auto;
+	bottom: -16px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -7px;
+	border-style: solid;
+	border-top-width: 13px;
+	border-right-width: 7px;
+	border-left-width: 7px;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+}
+
+.el-boxShadow.el-boxFrame.el-boxBalloon_border:before{
+	box-shadow: 1px 1px 3px 1px $color-shadow;
+}
+
+.el-boxBalloon_border:after{
+	content: "";
+	position: absolute;
+	display: block;
+	top: auto;
+	right: auto;
+	bottom: -15px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -6px;
+	border-style: solid;
+	border-top-width: 12px;
+	border-right-width: 6px;
+	border-left-width: 6px;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+}
+
+.el-boxShadow.el-boxBalloon_border:after{
+	box-shadow: 1px 1px 3px 1px $color-shadow;
+}
+
+.el-boxShadow.el-boxFrame.el-boxBalloon_border:after{
+	box-shadow: 0 0 0 0;
+}
+
+.el-boxFrame.el-boxBalloon_character:before,
+.el-boxBalloon_character:after{
+	content: "\0025bc";
+	position: absolute;
+	display: block;
+	left: 50%;
+	@include kani-sans-serif();
+}
+
+.el-boxFrame.el-boxBalloon_character:before{
+	top: auto;
+	right: auto;
+	bottom: -15px;
+	margin-left: -8px;
+	font-size: 18px;
+	line-height: 18px;
+}
+
+.el-boxShadow.el-boxFrame.el-boxBalloon_character:before{
+	text-shadow: 0 3px 3px $color-shadow;
+}
+
+.el-boxBalloon_character:after{
+	top: auto;
+	right: auto;
+	bottom: -13px;
+	margin-left: -7px;
+	font-size: 16px;
+	line-height: 16px;
+}
+
+.el-boxShadow.el-boxBalloon_character:after{
+	text-shadow: 0 3px 3px $color-shadow;
+}
+
+.el-boxShadow.el-boxFrame.el-boxBalloon_character:after{
+	text-shadow: 0 0 0 0;
+}
+
+.el-boxBalloon_transform{
+	z-index: 1;
+}
+
+.el-boxBalloon_transform:before{
+	content: "";
+	position: absolute;
+	display: block;
+	top: auto;
+	right: auto;
+	bottom: -7px;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	margin-left: -10px;
+	@include transform(rotate(67.5deg) skew(45deg) scale(1,0.7));
+}
+
+.el-boxBalloon_transform:after{
+	content: "";
+	position: absolute;
+	display: block;
+	top: auto;
+	right: auto;
+	bottom: 0;
+	left: 50%;
+	width: 20px;
+	height: 23px;
+	margin-left: -10px;
+}
+
+.el-boxShadow.el-boxBalloon_transform:before{
+	box-shadow: 1px 1px 3px 1px $color-shadow;
+}
+
+.el-boxBalloon_transform_inner{
+	 position: relative;
+	z-index: 2;
+}
+
+/* 閉じるアイコン */
+
+/* ボックスモデル内モジュール */
+.mod-box-books_title{
+	@extend %u-box_title;
+}
+
+.mod-box-books_text{
+	@extend %u-box_text;
+	font-size: 12px;
+}
+
+.mod-box-books_author{
+	@extend %u-box_special;
+}
+
+.mod-box-products_title{
+	@extend %u-box_title;
+}
+
+.mod-box-products_text{
+	@extend %u-box_text;
+}
+
+.mod-box-products_price{
+	@extend %u-box_special;
+	text-align: right;
+}
+
+.mod-box-error_text{
+	@extend %u-box_text;
+}
+
+/* テキスト */
+
+/* 行取り */
+.el-txt_center{ text-align: center !important; }
+
+.el-txt_right{ text-align: right !important; }
+
+/* テキストサイズ */
+.el-txt_s{ font-size: 12px; }
+
+/* テキストカラー */
+.el-txt_error{
+	color: $color-error !important;
+}
+
+.el-txt_attention{
+	color: $color-attention !important;
+}
+
+.el-txt_notes{
+	color: $color-gray40 !important;
+}
+
+/* 注釈 */
+.el-txt-bullet-notes{
+	@include kani-symbol;
+}
+
+/* リンク */
+.el-link_arrow_bd{
+	padding-left: 14px;
+	@include kani-arrow-left;
+	&:before{
+		top: 50%;
+		right: auto;
+		bottom: auto;
+		left: 3px;
+		margin-top: -4px;
+	}
+}
+
+/* 外部リンク */
+.el-link_external_bd{
+	padding-right: 14px;
+	position: relative;
+	&:before,&:after{
+		content: "";
+		position: absolute;
+		top: 50%;
+		bottom: auto;
+		left: auto;
+		width: 8px;
+		height: 6px;
+		border-style: solid;
+		border-color: $color-link;
+		background-color: $color-white;
+		box-sizing: border-box;
+	}
+	&:before{
+		border-width: 1px;
+		right: 2px;
+		margin-top: -2px;
+	}
+	&:after{
+		right: 0;
+		margin-top: -4px;
+		border-top-width: 2px;
+		border-right-width: 1px;
+		border-bottom-width: 1px;
+		border-left-width: 1px;
+	}
+	&:hover{
+		&:after,&:before{
+			border-color: $color-link_h;
+		}
+	}
+}
+
+/* アンカー */
+.el-link_anchor{
+	display: inline-block;
+	color: $color-link;
+	position: relative;
+	padding-right: 14px;
+}
+
+.el-link_anchor:hover{
+	color: $color-link_h;
+	text-decoration: underline;
+}
+
+.el-link_anchor:after{
+	content: "";
+	position: absolute;
+	display: block;
+	top: 50%;
+	right: 0;
+	bottom: auto;
+	left: auto;
+	width: 0;
+	height: 0;
+	margin-top: -5px;
+	border-style: solid;
+	border-width: 5px;
+	border-top-color: inherit;
+	border-right-color: white;
+	border-bottom-color: white;
+	border-left-color: white;
+}
+
+.el-link_anchor:before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 0;
+	bottom: auto;
+	left: auto;
+	display: block;
+	width: 10px;
+	height: 11px;
+	margin-top: -5px;
+	background-color: $color-link;
+}
+
+.el-link_anchor:hover:before{
+	background-color: $color-link_h;
+}
+
+
+/* clearfix→kani */
+
+.el-clearfix{
+	@extend %kani-clearfix;
+}
+
+.el-clearfixOld{
+	@extend %kani-clearfixOld;
+}
+

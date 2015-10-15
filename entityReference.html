@@ -1,0 +1,251 @@
+<h1>実体参照</h1>
+
+
+http://www.kab-studio.biz/Programing/JavaA2Z/Word/00000940.html
+
+HTMLで、主に特殊な文字を出力するために使用される特殊な単語。 
+「&amp;lt;」や「&amp;#60;」といった書き方のこと。 
+「数値文字実体参照」「エンティティコード」とも言う。 
+　 
+たとえば、HTMLタグそのものを出力したい場合、「&gt;IMG&lt;」とそのまま書いてしまうと、HTMLタグと認識されてしまうため、出力されない。これは、「&gt;」や「&lt;」が、タグを囲む記号と見なされるためである。 
+そこで、「&gt;」や「&lt;」を、そのままの文字として出力する方法が必要となる。 
+そのための記法が「実体参照」である。 
+
+記法
+&amp;******;
+のフォーマット。*に規定の文字列やコードを入力します。
+
+
+文字実体参照
+&amp;{規定の文字列};
+
+<table class="basic" summary="マークアップ記号">
+  <tbody><tr>
+    <th colspan="4">数値文字参照</th>
+    <th colspan="2">文字実体参照</th>
+    <th colspan="2" rowspan="2">備考</th>
+  </tr>
+  <tr>
+    <th>文字</th>
+    <th>十進</th>
+    <th>文字</th>
+    <th>十六進</th>
+    <th>文字</th>
+    <th>実体名</th>
+  </tr>
+  <tr>
+    <th class="v">"</th>
+    <td>&amp;#34;</td>
+    <th class="v">"</th>
+    <td>&amp;#x0022;</td>
+    <th class="v">"</th>
+    <td>&amp;quot;</td>
+    <td>引用符</td>
+  </tr>
+  <tr>
+    <th class="v">&amp;</th>
+    <td>&amp;#38;</td>
+    <th class="v">&amp;</th>
+    <td>&amp;#x0026;</td>
+    <th class="v">&amp;</th>
+    <td>&amp;amp;</td>
+    <td>アンパサンド</td>
+  </tr>
+  <tr>
+    <th class="v">&lt;</th>
+    <td>&amp;#60;</td>
+    <th class="v">&lt;</th>
+    <td>&amp;#x003C;</td>
+    <th class="v">&lt;</th>
+    <td>&amp;lt;</td>
+    <td>不等号(より小)</td>
+  </tr>
+  <tr>
+    <th class="v">&gt;</th>
+    <td>&amp;#62;</td>
+    <th class="v">&gt;</th>
+    <td>&amp;#x003E;</td>
+    <th class="v">&gt;</th>
+    <td>&amp;gt;</td>
+    <td>不等号(より大)</td>  </tr>
+</tbody></table>
+引用：http://www.asahi-net.or.jp/~ax2s-kmtn/ref/cref_ent.html
+
+数値文字参照
+Unicodeの番号を10進数あるいは16進数で指定して文字を表示します。
+現在はUnicodeが標準のため、直接入力しても特殊文字を表示できる場合ができますが、原則フォントやOSの対応状況に依存した機種依存文字ですので実体参照を使用してください。
+
+<blockquote>
+<table summary="丸数字（丸付き数字）の入力方法">
+<tbody><tr>
+<th>表示</th>
+<th>数値<br>文字参照</th>
+<th>表示</th>
+<th>数値<br>文字参照</th>
+</tr>
+<tr>
+<td>①</td>
+<td>&amp;#9312;</td>
+<td>⑪</td>
+<td>&amp;#9322;</td>
+</tr>
+<tr>
+<td>②</td>
+<td>&amp;#9313;</td>
+<td>⑫</td>
+<td>&amp;#9323;</td>
+</tr>
+<tr>
+<td>③</td>
+<td>&amp;#9314;</td>
+<td>⑬</td>
+<td>&amp;#9324;</td>
+</tr>
+<tr>
+<td>④</td>
+<td>&amp;#9315;</td>
+<td>⑭</td>
+<td>&amp;#9325;</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>&amp;#9316;</td>
+<td>⑮</td>
+<td>&amp;#9326;</td>
+</tr>
+<tr>
+<td>⑥</td>
+<td>&amp;#9317;</td>
+<td>⑯</td>
+<td>&amp;#9327;</td>
+</tr>
+<tr>
+<td>⑦</td>
+<td>&amp;#9318;</td>
+<td>⑰</td>
+<td>&amp;#9328;</td>
+</tr>
+<tr>
+<td>⑧</td>
+<td>&amp;#9319;</td>
+<td>⑱</td>
+<td>&amp;#9329;</td>
+</tr>
+<tr>
+<td>⑨</td>
+<td>&amp;#9320;</td>
+<td>⑲</td>
+<td>&amp;#9330;</td>
+</tr>
+<tr>
+<td>⑩</td>
+<td>&amp;#9321;</td>
+<td>⑳</td>
+<td>&amp;#9331;</td>
+</tr>
+</tbody></table>
+<table class="mT1em" summary="丸数字（丸付き数字）の入力方法">
+<tbody><tr>
+<th>表示</th>
+<th>数値<br>文字参照</th>
+<th>表示</th>
+<th>数値<br>文字参照</th>
+<th>表示</th>
+<th>数値<br>文字参照</th>
+</tr>
+<tr>
+<td>❶</td>
+<td>&amp;#10102;</td>
+<td>➀</td>
+<td>&amp;#10112;</td>
+<td>➊</td>
+<td>&amp;#10122;</td>
+</tr>
+<tr>
+<td>❷</td>
+<td>&amp;#10103;</td>
+<td>➁</td>
+<td>&amp;#10113;</td>
+<td>➋</td>
+<td>&amp;#10123;</td>
+</tr>
+<tr>
+<td>❸</td>
+<td>&amp;#10104;</td>
+<td>➂</td>
+<td>&amp;#10114;</td>
+<td>➌</td>
+<td>&amp;#10124;</td>
+</tr>
+<tr>
+<td>❹</td>
+<td>&amp;#10105;</td>
+<td>➃</td>
+<td>&amp;#10115;</td>
+<td>➍</td>
+<td>&amp;#10125;</td>
+</tr>
+<tr>
+<td>❺</td>
+<td>&amp;#10106;</td>
+<td>➄</td>
+<td>&amp;#10116;</td>
+<td>➎</td>
+<td>&amp;#10126;</td>
+</tr>
+<tr>
+<td>❻</td>
+<td>&amp;#10107;</td>
+<td>➅</td>
+<td>&amp;#10117;</td>
+<td>➏</td>
+<td>&amp;#10127;</td>
+</tr>
+<tr>
+<td>❼</td>
+<td>&amp;#10108;</td>
+<td>➆</td>
+<td>&amp;#10118;</td>
+<td>➐</td>
+<td>&amp;#10128;</td>
+</tr>
+<tr>
+<td>❽</td>
+<td>&amp;#10109;</td>
+<td>➇</td>
+<td>&amp;#10119;</td>
+<td>➑</td>
+<td>&amp;#10129;</td>
+</tr>
+<tr>
+<td>❾</td>
+<td>&amp;#10110;</td>
+<td>➈</td>
+<td>&amp;#10120;</td>
+<td>➒</td>
+<td>&amp;#10130;</td>
+</tr>
+<tr>
+<td>❿</td>
+<td>&amp;#10111;</td>
+<td>➉</td>
+<td>&amp;#10121;</td>
+<td>➓</td>
+<td>&amp;#10131;</td>
+</tr>
+</tbody></table>
+</blockquote>
+
+http://coliss.com/articles/build-websites/operation/writing/67.html
+
+近年はcssのfont-familyプロパティと組み合わせて、ページの装飾をするのにも用いられます。
+
+
+絵文字
+2010年のUnicode6.0から絵文字が登録されました。
+絵文字を表示させる場合も数値文字参照を使用します。
+しかしMacOS 10.7やWindows8より古いOSでは絵文字非対応、あるいはごく一部の絵文字しか表示されません。
+また2015年現在はOSによって絵文字の絵柄や細かな仕様が異なるため、同じ絵文字で必ずしも同じニュアンスが伝わるとは限らない状況です。
+参考サイト
+http://emojipedia.org/
+

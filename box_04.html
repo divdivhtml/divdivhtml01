@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>二重線ボックス</title>
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+<script src="common/js/jquery-1.11.3.min.js"></script>
+<script src="common/js/common.js"></script>
+<script src="common/js/prettify.js"></script>
+<script src="common/js/lang-css.js"></script>
+</head>
+<body>
+<div id="markup_wrap" class="mod-parts-counter">
+<div class="js-markUp-sample mod-markUp-sample">
+<h4 class="mod-pts-H3">作例</h4>
+<p>こちらのボックスを作成しましょう。</p>
+
+<p><img src="common/images/img-dbg-doubleBox.png" alt=""></p>
+
+<dl class="mod-pts-list-browser">
+<dt>border-style:プロパティを使用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-box03 el-boxDoubleFrame_css el-boxFrame el-marginBottom20">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+
+<p>border-style:プロパティでは線の太さを個別に調整することができません。ではこちらの方法ではどうでしょう。</p>
+<dl class="mod-pts-list-browser">
+<dt>divを二重にする</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-box03 el-boxDoubleFrame el-boxFrame el-marginBottom20">
+<div class="el-box03 el-boxFrame">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+<!-- /el-boxDoubleFrame --></div>
+
+
+<!-- /js-markUp-sample --></div>
+
+<h4 class="mod-pts-H3">コード</h4>
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;!-- 二重線ボックス（border-style:プロパティを使用） --&gt;
+&lt;div class=&quot;el-box03 <b>el-boxDoubleFrame_css</b> el-boxFrame el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box03 --&gt;&lt;/div&gt;
+
+&lt;!-- 二重線ボックス（divを二重にする） --&gt;
+<b>&lt;div class=&quot;el-box03 el-boxDoubleFrame el-boxFrame el-marginBottom20&quot;&gt;</b>
+&lt;div class=&quot;el-box03 el-boxFrame&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box03 --&gt;&lt;/div&gt;
+<b>&lt;!-- /el-boxDoubleFrame --&gt;&lt;/div&gt;</b>
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box03 {
+  padding: 13px;
+}
+
+.el-boxFrame {
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* ボックス3（青） */
+.el-box03 {
+  background-color: #eaf6ff;
+}
+
+.el-box03.el-boxFrame{
+  border-color: #0068b7;
+}
+
+/* 二重線ボックス（border-style:プロパティを使用） */
+.el-boxDoubleFrame_css {
+  border-style: double;
+  border-width: 5px;
+}
+
+/* 二重線ボックス（divを二重にする）の外側 */
+.el-boxDoubleFrame {
+  padding: 1px;
+  border-style: solid;
+  border-width: 3px;
+}
+
+/* ボックス内モジュール */
+.mod-box-products_title {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.mod-box-products_text {
+  margin: 0;
+}
+
+.mod-box-products_price {
+  margin: 15px 0 0;
+}
+</pre>
+</dd>
+</dl>
+
+<h4 class="mod-pts-H3">補足</h4>
+<p>コードを見ると、デザインのためにdivが二重になっています。古いブラウザを考慮するなどやむを得ない場合もありますが、装飾のためだけにdiv要素を増やすのはなるべく避けたいところです。次の記事以降で一つのdivのみで作例通りの二重線を作成する方法を紹介していきます。</p>
+
+<!-- /#markup_wrap --></div>
+</body>
+</html>

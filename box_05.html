@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>二重線ボックス</title>
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+<script src="common/js/jquery-1.11.3.min.js"></script>
+<script src="common/js/common.js"></script>
+<script src="common/js/prettify.js"></script>
+<script src="common/js/lang-css.js"></script>
+</head>
+<body>
+<div id="markup_wrap" class="mod-parts-counter">
+<div class="js-markUp-sample mod-markUp-sample">
+<h4 class="mod-pts-H3">作例</h4>
+<p>こちらのボックスをdiv要素ひとつで作成しましょう。</p>
+
+<p><img src="common/images/img-dbg-doubleBox.png" alt=""></p>
+
+<dl class="mod-pts-list-browser">
+<dt>box-shadowプロパティを使用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-box03 el-boxDoubleFrame_shadow el-marginBottom20">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+
+<!-- /js-markUp-sample --></div>
+
+<h4 class="mod-pts-H3">コード</h4>
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;!-- 二重線ボックス（box-shadowプロパティを使用） --&gt;
+&lt;div class=&quot;el-box03 el-boxDoubleFrame_shadow el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box03 --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box03 {
+  padding: 13px;
+}
+
+/* ボックス3（青） */
+.el-box03 {
+  background-color: #eaf6ff;
+}
+
+/* 二重線ボックス（box-shadowプロパティを使用） */
+.el-boxDoubleFrame_shadow {
+  padding: 18px;
+}
+
+.el-boxDoubleFrame_shadow.el-box03 {
+  box-shadow: 0 0 0 3px #0068b7 inset, 0 0 0 4px #eaf6ff inset, 0 0 0 5px #0068b7 inset;
+}
+</pre>
+</dd>
+</dl>
+
+<p class="mod-pts-H3">box-shadowプロパティの注意</p>
+
+<p>こちらの方法はbox-shadowプロパティのぼかしをゼロにすることでボーダー状のぼかしを設定しているのですが、IE（9~11）ではアンチエイリアスが発生してしまい、想定通りに見えません。</p>
+
+<p><img src="./common/images/img-dbg-doubleBoxShadow.png" alt=""></p>
+
+<p>また複数のbox-shadowプロパティが1つの要素で同時に存在した場合、もっとも優先度の高いプロパティしか適用されません。こちらの例では、二重線ボックスのプロパティが優先され、ドロップシャドウのプロパティは打ち消されています。</p>
+<div class="el-box03 el-boxDoubleFrame_shadow el-boxShadow el-marginBottom20">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;div class=&quot;el-box03 el-boxDoubleFrame_shadow <strong class="el-txt_error">el-boxShadow</strong> el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box03 --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box03 {
+  padding: 13px;
+}
+
+/* ボックス3（青） */
+.el-box03 {
+  background-color: #eaf6ff;
+}
+
+/* 二重線ボックス（box-shadowプロパティを使用） */
+.el-boxDoubleFrame_shadow {
+  padding: 18px;
+}
+
+/* セレクタ優先度が上のため有効となる */
+.el-boxDoubleFrame_shadow.el-box03 {
+  box-shadow: 0 0 0 3px #0068b7 inset, 0 0 0 4px #eaf6ff inset, 0 0 0 5px #0068b7 inset;
+}
+
+/* セレクタ優先度が下のため無効となる */
+.el-boxShadow {
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+}
+</pre>
+</dd>
+</dl>
+
+<p>div要素を二重にし、ドロップシャドウボックス(.el-boxShadow)を適用すれば一応実装できます。</p>
+<div class="el-boxShadow el-marginBottom20">
+<div class="el-box03 el-boxDoubleFrame_shadow">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+<!-- /el-boxShadow --></div>
+
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;div class=&quot;<strong class="el-txt_error">el-boxShadow</strong> el-marginBottom20&quot;&gt;
+&lt;div class=&quot;el-box03 el-boxDoubleFrame_shadow&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box03 --&gt;&lt;/div&gt;
+&lt;!-- /el-boxShadow --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box03 {
+  padding: 13px;
+}
+
+/* ボックス3（青） */
+.el-box03 {
+  background-color: #eaf6ff;
+}
+
+/* 二重線ボックス（box-shadowプロパティを使用） */
+.el-boxDoubleFrame_shadow {
+  padding: 18px;
+}
+
+.el-boxDoubleFrame_shadow.el-box03 {
+  box-shadow: 0 0 0 3px #0068b7 inset, 0 0 0 4px #eaf6ff inset, 0 0 0 5px #0068b7 inset;
+}
+
+.el-boxShadow {
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+}
+</pre>
+</dd>
+</dl>
+
+<p>一方インナーシャドウボックス(.el-boxShadowInset)は想定される実装が行われません。</p>
+
+<div class="el-boxShadowInset el-marginBottom20">
+<div class="el-box03 el-boxDoubleFrame_shadow">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+<!-- /el-boxShadowInset --></div>
+
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;div class=&quot;<strong class="el-txt_error">el-boxShadowInset</strong> el-marginBottom20&quot;&gt;
+&lt;div class=&quot;el-box03 el-boxDoubleFrame_shadow&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box03 --&gt;&lt;/div&gt;
+&lt;!-- /el-boxShadowInset --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box03 {
+  padding: 13px;
+}
+
+/* ボックス3（青） */
+.el-box03 {
+  background-color: #eaf6ff;
+}
+
+/* 二重線ボックス（box-shadowプロパティを使用） */
+.el-boxDoubleFrame_shadow {
+  padding: 18px;
+}
+
+.el-boxDoubleFrame_shadow.el-box03 {
+  box-shadow: 0 0 0 3px #0068b7 inset, 0 0 0 4px #eaf6ff inset, 0 0 0 5px #0068b7 inset;
+}
+
+/* スタイルは有効であるが、.el-box03の下敷きになって隠れている */
+.el-boxShadowInset {
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+}
+</pre>
+</dd>
+</dl>
+
+<p>一つのdivで複数のbox-shadowプロパティを実装するためにはbox-shadowプロパティをマージし、クラスをつなぎ合わせたセレクタでスタイルを再定義します。</p>
+<div class="el-box02 el-boxDoubleFrame_shadow el-boxShadow el-marginBottom20">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box02 --></div>
+
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;div class=&quot;el-box02 el-boxDoubleFrame_shadow el-boxShadow el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box02 --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box02 {
+  padding: 13px;
+}
+
+/* ボックス3（赤） */
+.el-box02 {
+  background-color: #fef1f4;
+}
+
+/* 二重線ボックスとドロップシャドウのスタイルをマージ */
+<b>.el-boxDoubleFrame_shadow.el-boxShadow.el-box02 {
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25), 0 0 0 3px crimson inset, 0 0 0 4px #fef1f4 inset, 0 0 0 5px crimson inset;
+}</b>
+</pre>
+</dd>
+</dl>
+
+<div class="el-box02 el-boxDoubleFrame_shadow el-boxShadowInset el-marginBottom20">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box02 --></div>
+
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;div class=&quot;el-box02 el-boxDoubleFrame_shadow el-boxShadowInset el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+&lt;!-- /el-box02 --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box02 {
+  padding: 13px;
+}
+
+/* ボックス2（赤） */
+.el-box02 {
+  background-color: #fef1f4;
+}
+
+/* 二重線ボックスとインナーシャドウのスタイルをマージ */
+<b>.el-boxDoubleFrame_shadow.el-boxShadowInset.el-box02 {
+  box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.25) inset, 0 0 0 3px crimson inset, 0 0 0 4px #fef1f4 inset, 0 0 0 5px crimson inset;
+}</b>
+</pre>
+</dd>
+</dl>
+
+<!-- /#markup_wrap --></div>
+</body>
+</html>

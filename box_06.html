@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>二重線ボックス</title>
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+<script src="common/js/jquery-1.11.3.min.js"></script>
+<script src="common/js/common.js"></script>
+<script src="common/js/prettify.js"></script>
+<script src="common/js/lang-css.js"></script>
+</head>
+<body>
+<div id="markup_wrap" class="mod-parts-counter">
+<div class="js-markUp-sample mod-markUp-sample">
+<h4 class="mod-pts-H3">作例</h4>
+<p>こちらのボックスをdiv要素ひとつで作成しましょう。</p>
+
+<p><img src="common/images/img-dbg-doubleBox.png" alt=""></p>
+
+<dl class="mod-pts-list-browser">
+<dt>擬似要素を使用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>8~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-box03 el-boxDoubleFrame_pseudo el-marginBottom20">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+
+<!-- /js-markUp-sample --></div>
+
+<h4 class="mod-pts-H3">コード</h4>
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;!-- 二重線ボックス（擬似要素を使用） --&gt;
+&lt;div class=&quot;el-box03 el-boxDoubleFrame_pseudo el-marginBottom20&quot;&gt;
+&lt;p class=&quot;mod-box-products_title&quot;&gt;プラン名&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_text&quot;&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class=&quot;mod-box-products_price&quot;&gt;価格 nn,nnn円&lt;/p&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box03 {
+  padding: 13px;
+}
+
+/* ボックス3（青） */
+.el-box03 {
+  background-color: #eaf6ff;
+}
+
+/* 二重線ボックス（擬似要素を使用） */
+.el-boxDoubleFrame_pseudo {
+  position: relative;
+  z-index: 1;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.el-boxDoubleFrame_pseudo:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  right: auto;
+  bottom: auto;
+  left: -2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  border-style: solid;
+  border-width: 1px;
+  width: 100%;
+  min-height: 100%;
+  z-index: 2;
+}
+
+.el-boxDoubleFrame_pseudo.el-box03 {
+  border-color: #0068b7;
+}
+
+.el-boxDoubleFrame_pseudo.el-box03:before {
+  border-color: #eaf6ff;
+}
+</pre>
+</dd>
+</dl>
+
+<p class="mod-pts-H3">補足</p>
+
+
+<p>ドロップシャドウボックスのbox-shadowプロパティは競合しないため適用されます。</p>
+<div class="el-box03 el-boxDoubleFrame_pseudo el-boxShadow el-marginBottom20">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<p>インナーシャドウボックスのbox-shadowプロパティも適用されますが、この場合box-shadowがボーダーの内側から生成されることに留意しましょう。</p>
+<div class="el-box03 el-boxDoubleFrame_pseudo el-boxShadowInset el-marginBottom20">
+<p class="mod-box-products_title">プラン名</p>
+<p class="mod-box-products_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-products_price">価格 nn,nnn円</p>
+<!-- /el-box03 --></div>
+
+<!-- /#markup_wrap --></div>
+</body>
+</html>

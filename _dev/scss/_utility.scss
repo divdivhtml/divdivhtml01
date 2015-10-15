@@ -1,0 +1,32 @@
+/*
+/*	_utility.scss
+/*	モジュールで頻出するスタイルをカプセル化する
+/*	モジュールを作る時はこちらの.scssを必ず確認する。
+/*----------------------------------------------------*/
+//
+//	使用例
+//	.mod-box-products_title{
+//		@extend %u-box_title;
+//	}
+//	.mod-box-products_text{
+//		@extend %u-box_text;
+//	}
+//	.mod-box-products_price{
+//		@extend %u-box_special;
+//		text-align: right;
+//	}
+
+/* el-box〜で使用 */
+%u-box_title{
+	margin: 0 0 5px 0;
+	font-weight: bold;
+}
+
+%u-box_text{
+	margin: 0;
+}
+
+%u-box_special{
+	margin: 15px 0 0;
+}
+

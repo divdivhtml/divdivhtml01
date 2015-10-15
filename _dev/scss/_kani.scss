@@ -1,0 +1,150 @@
+/*
+/*	-kani.scss
+/*	自作のSassライブラリ
+/*----------------------------------------------------*/
+
+//
+//	なんでkani？
+//	自作のSassライブラリを作成する際は、他のライブラリと名前が衝突しないよう任意の接頭辞があると望ましいので
+//	とりあえずkaniと名付けました。
+//
+
+//Arial or サンセリフに統一
+@mixin kani-sans-serif{
+	font-family: Arial, sans-serif !important;
+}
+
+// 要素にビュレット（文字）を付ける
+@mixin kani-symbol(
+		$kani-symbolTxt:'\203B',		//ビュレットの内容
+		$kani-symbolFace:null,		//書体
+		$kani-symbolColor:null,		//色
+		$kani-symbolSize:null,		//大きさ
+		$kani-symbolWeight:null,	//太さ
+		$kani-symbolSpace:1.125em	//アキ
+	){
+	display: inline-block;
+	position: relative;
+	padding-left: $kani-symbolSpace;
+	&::before{
+		content: "#{$kani-symbolTxt}";
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: $kani-symbolColor;
+		font-size: $kani-symbolSize;
+		font-weight: $kani-symbolWeight;
+		@if $kani-symbolFace == 1{ @include kani-sans-serif; }//フォントの違いで表示が異なる不具合を改善
+	}
+}
+
+
+// 要素に通し番号（カウンタ）を振る
+@mixin kani-orderNum(
+	$kani-counterName:counterName,	//カウンタ名
+	$kani-counterNameBefore:null,	//接頭辞（No.など）
+	$kani-counterNameAfter:null,	//接尾辞（〜位など）
+	$kani-counterSpace:1.125em,		//カウンタの入るスペース
+	$kani-counterColor:null,		//文字色
+	$kani-counterFontSize:null,		//文字の大きさ
+	$kani-counterFontWeight:null,	//文字の太さ
+	$kani-counterWidth:null,		//ブロック幅
+	$kani-counterHeight:null,		//ブロック高さ(pxのみ)
+	$kani-counterBgColor:null,		//ブロック背景色
+	$kani-counterRadius:null		//ブロックの角丸
+	){
+	position: relative;
+	padding-left: $kani-counterSpace;
+	&::before{
+		content: "#{$kani-counterNameBefore}"counter($kani-counterName)"#{$kani-counterNameAfter}";
+		counter-increment: ($kani-counterName);
+		display: block;
+		position: absolute;
+		@if $kani-counterHeight{ top:50%; }
+		left: 0;
+		width:$kani-counterWidth;
+		@if $kani-counterHeight{
+			height:$kani-counterHeight;
+			margin-top: -$kani-counterHeight/2;
+			padding-top: 2px;
+		}
+		color: $kani-counterColor;
+		font-size: $kani-counterFontSize;
+		font-weight: $kani-counterFontWeight;
+		@if $kani-counterHeight{ line-height: $kani-counterHeight - 2px; }
+		text-align: center;
+		background-color: $kani-counterBgColor;
+		border-radius: $kani-counterRadius;
+		box-sizing: border-box;
+	}
+}
+
+/* clearfix */
+%kani-clearfix:after{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* IE6/7に対応したclearfix */
+%kani-clearfixOld{
+	@extend %kani-clearfix;
+	*zoom:1;
+}
+
+/* アイコンのスプライト表示 */
+%kani-icon-sprite{
+	display: inline-block;
+	margin-right: 6px;
+	vertical-align: middle;
+	font-size: 0;
+	background-image: url(../images/bg-icon.png);
+	background-repeat: no-repeat;
+}
+
+/* アイコンのスプライト表示(PC) */
+%kani-icon-sprite-pc{
+	@extend %kani-icon-sprite;
+	background-image: url(../images/bg-icon_pc.png);
+}
+
+//下向き三角(border)
+@mixin kani-arrow-top($top-width:6px, $right-width:4px, $left-width:4px){
+	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-top-width: $top-width;
+		border-right-width: $right-width;
+		border-left-width: $left-width;
+		border-top-color: inherit;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+	}
+}
+
+//右向き三角(border)
+@mixin kani-arrow-left($top-width:4px, $bottom-width:4px, $left-width:6px){
+	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-top-width: $top-width;
+		border-bottom-width: $bottom-width;
+		border-left-width: $left-width;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: inherit;
+	}
+}
+

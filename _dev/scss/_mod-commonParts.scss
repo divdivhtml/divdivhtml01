@@ -1,0 +1,161 @@
+/*
+/*	-element.scss
+/*	_commonParts.htmlで使われている表示用モジュールのSass
+/*----------------------------------------------------*/
+
+.mod-markUp-sample{
+	margin-bottom: 60px;
+	*:first-child{
+		margin-top: 0 !important;
+	}
+}
+
+
+.mod-parts-counter{
+	counter-reset: mod-pts;
+}
+
+.mod-pts-H1{
+	margin: 0 0 1em;
+	padding: 0.25em;
+	font-size: 2.5em;
+	font-weight: normal;
+	background-color: $color-gray95;
+	border-bottom: none;
+}
+
+.mod-pts-H2{
+	margin-top: 40px;
+	font-weight: normal;
+	border-bottom: none;
+	&.is-countable{
+		counter-reset: mod-pts2;
+		@include kani-orderNum(
+			mod-pts,		//カウンタ名
+			null,			//カウンタ名の前に入れる文言
+			null,			//カウンタ名の後ろに入れる文言
+			1.25em,			//カウンタのアキ部分
+			$color-white,	//カウンタ文字色
+			16px,			//カウンタ文字大きさ
+			null,			//カウンタ文字太さ
+			22px,			//カウンタwidth
+			22px,			//カウンタheight
+			$color-gray60,	//カウンタ背景色
+			100%			//カウンタ角丸
+		);
+	}
+	&+.mod-pts-H3{ margin-top: 20px; }
+}
+
+.mod-pts-H3{
+	margin-top: 30px;
+	padding: 10px;
+	background-color: $color-gray95;
+	&.is-countable{
+		@include kani-orderNum(mod-pts2,null,".",1.125em,null);//第一引数は必須
+	}
+}
+
+/* iframeを開く前の部分にマージンを設ける */
+.mod-iframeOpen_before{ margin-top: 60px !important; }
+
+.mod-pts-list-browser{
+  margin-top: 40px;
+  padding: 10px;
+  background-color: $color-gray95;
+}
+
+.mod-pts-list-browser dt:after {
+  content:"：";
+}
+
+.mod-pts-list-browser dt,
+.mod-pts-list-browser dd{
+  display: inline;
+}
+
+.mod-pts-list-browser dd{
+	display: inline;
+}
+
+.mod-pts-list-browser dd{
+	display: inline;
+}
+
+.mod-pts-icon-browser{
+	@extend %kani-icon-sprite-pc;
+	width: 17px;
+	height: 17px;
+}
+
+.mod-pts-icon-browser_IE {
+  background-position: 0 0;
+}
+
+.mod-pts-icon-browser_FF {
+  background-position: -40px 0;
+}
+
+.mod-pts-icon-browser_Ch {
+  background-position: -20px 0;
+}
+
+.mod-pts-icon-browser_Sa {
+  background-position: -60px 0;
+}
+
+/* アコーディオン */
+.mod-accordionList > dt { margin-bottom: 15px; }
+
+.mod-accordionList_bullet{
+	color: $color-link;
+	cursor: pointer;
+	padding-right: 12px;
+	@include kani-arrow-left();
+	&:hover{
+	color: $color-link_h;
+	text-decoration: underline;
+	}
+	&:before{
+	top: 50%;
+	right: 0;
+	bottom: auto;
+	left: auto;
+	margin-top: -4px;
+	}
+}
+
+.is-active .mod-accordionList_bullet{
+	@include kani-arrow-top();
+	&:before{
+	margin-top: -3px;
+	}
+}
+
+.mod-accordionList > dd{
+	display: none;
+}
+
+.mod-codeViewList dt{
+	margin-bottom: 10px;
+	background-color: $color-gray95;
+}
+
+.mod-htmlMeans dt{
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: solid 1px $color-gray90;
+}
+
+.mod-htmlMeans dd{
+	position: relative;
+	margin-left: 3em;
+	&:before{
+		position: absolute;
+		top: 0;
+		right: auto;
+		bottom: auto;
+		left: -1.5em;
+		content: "→"
+	}
+}
