@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ページの使い方</title>
+<link rel="stylesheet" href="/common/css/normalize.css">
+<link rel="stylesheet" href="common/css/common.css">
+<script src="/common/js/jquery-1.11.3.min.js"></script>
+<script src="common/js/common.js"></script>
+<script src="/common/js/prettify.js"></script>
+<script src="/common/js/lang-css.js"></script>
+</head>
+<body>
+<div id="markup_wrap" class="mod-parts-counter">
+
+<p>下記のタイトル下のHTMLが作例です。まずは作例をHTMLとCSSでマークアップしてみてください。</p>
+<h3 class="mod-pts-H3">作例</h3>
+<h1 class="el-heading-borderLeft">見出し1</h1>
+<h2 class="el-heading-borderLeft">見出し2</h2>
+<h3 class="el-heading-borderLeft">見出し3</h3>
+<h4 class="el-heading-borderLeft">見出し4</h4>
+<h5 class="el-heading-borderLeft">見出し5</h5>
+<h6 class="el-heading-borderLeft">見出し6</h6>
+
+<p>単体記事ページにある「この作例のコードを見る」をクリックすると下記が参照できます。</p>
+<h4 class="mod-pts-H3">コード</h4>
+<p>作例で使用されたコードを記述しています。</p>
+<dl class="mod-codeViewList"><dt>HTML</dt><dd>
+<pre class="prettyprint linenums lang-html">&lt;h1 class="el-heading-borderLeft"&gt;見出し1&lt;/h1&gt;
+&lt;h2 class="el-heading-borderLeft"&gt;見出し2&lt;/h2&gt;
+&lt;h3 class="el-heading-borderLeft"&gt;見出し3&lt;/h3&gt;
+&lt;h4 class="el-heading-borderLeft"&gt;見出し4&lt;/h4&gt;
+&lt;h5 class="el-heading-borderLeft"&gt;見出し5&lt;/h5&gt;
+&lt;h6 class="el-heading-borderLeft"&gt;見出し6&lt;/h6&gt;
+</pre>
+</dd><dt>CSS(common.css)</dt><dd>
+<pre class="prettyprint linenums lang-css">h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0;
+}
+
+/* 見出し（左側にライン） */
+.el-heading-borderLeft {
+  padding-left: 10px;
+  border-left: solid 4px #009944;
+}
+</pre>
+</dd></dl></dd></dl>
+
+<p>作例によっては「※注意事項」が設けられた項目があり、運用面での諸注意を確認することができます。</p>
+<h4 class="mod-pts-H3"><b class="el-txt-bullet-notes">注意事項</b></h4>
+<p>左側と下側でボーダーを適用した場合、コーナー部分は斜めに処理されます。</p>
+
+<dl class="mod-codeViewList"><dt>HTML</dt><dd>
+<h1 class="el-heading-borderLeft el-heading-borderBottom">見出し1</h1>
+</dd></dl><!-- /#markup_wrap -->
+
+</div>
+</body>
+</html>
