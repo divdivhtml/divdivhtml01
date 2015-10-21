@@ -101,3 +101,13 @@ textarea {
 .mod-change_btn{
 	background-color: #6cd;
 }
+
+.mod-btn-wrap > *{
+	margin-bottom: 10px;
+}
+
+.u-sp-hide{display: none;}
+
+@media(max-width:960px){
+	br.u-sp-hide{display: inline;}
+}
