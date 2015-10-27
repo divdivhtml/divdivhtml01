@@ -32,22 +32,20 @@ $(function(){
 			//テキストボックスが入力されていない場合のエラー
 			$('#js-utfChange_error_notext').show();
 		}else{
-			//UTF-16コードに変換する
+			//元の文字に戻してからUTF-16コードに変換する
 			utf = decodeStr(utf);
 			$('.js-utfChange_error').hide();
-			for(utf, str = "", i = 0;i < utf.length;i++){
-				if($thisBtn == 'html'){
-					str += "&#" + utf.charCodeAt(i).toString(10) + ";";
-					$("#js-utfChange_text").val(str);
-				}else if($thisBtn == 'css'){
-					str += "\\00"+utf.charCodeAt(i).toString(16);
-					$("#js-utfChange_text").val(str);
-				}else if($thisBtn == 'decode'){
-					$("#js-utfChange_text").val(utf);
-				}else{
-					//例外処理
-					$('#js-utfChange_error_nocheck').show();
-				}
+			if($thisBtn == 'html'){
+				utf = "&#" + utf.codePointAt(0) + ";";
+				$("#js-utfChange_text").val(utf);
+			}else if($thisBtn == 'css'){
+				utf = "\\" + utf.codePointAt(0).toString(16);
+				$("#js-utfChange_text").val(utf);
+			}else if($thisBtn == 'decode'){
+				$("#js-utfChange_text").val(utf);
+			}else{
+				//例外処理
+				$('#js-utfChange_error_nocheck').show();
 			}
 		}
 	});
@@ -55,12 +53,22 @@ $(function(){
 	//元の文字に戻した値を返す関数
 	function decodeStr(strTmp){
 		if(strTmp.slice(0,2) == '&#'){
-			strTmp = String.fromCharCode(strTmp.slice(2,-1));
-		}else if(strTmp.slice(0,3) == '\\00'){
+			strTmp = String.fromCodePoint(strTmp.slice(2,-1));
+		}else if(strTmp.slice(0,1) == '\\'){
 			strTmp = strTmp.replace(/\\/g , '0x');
-			strTmp = String.fromCharCode(parseInt(strTmp, 16));
+			strTmp = String.fromCodePoint(parseInt(strTmp, 16));
 		}
 		return strTmp;
+	}
+	
+	//stringToArray(str)を用いて、#js-utfChange_textに2文字以上入力されたら削る
+	$("#js-utfChange_text").change(function(){
+		$(this).val(stringToArray($(this).val())[0]);
+	});
+	
+	//サロゲートペアに対応した文字列配列化
+	function stringToArray(str) {
+		return str.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]|[^\uD800-\uDFFF]/g) || [];
 	}
 
 	//よく使う文字プルダウンから選ばれた際に実行する
@@ -80,3 +88,4 @@ $(function(){
 		$("#js-utfChange_text").val($($selector).children(':selected').val());
 	}
 });
+
