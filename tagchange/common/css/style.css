@@ -34,11 +34,6 @@ dd {
 .js-utfChange_selectSub{display: none;}
 .js-utfChange_selectSub.is-active{display: inline-block;}
 
-textarea{
-	width: 100%;
-	max-width: 760px;
-  box-sizing: border-box;
-}
 button,
 input,
 optgroup,
@@ -97,6 +92,12 @@ input[type="radio"] {
 }
 textarea {
   overflow: auto;
+}
+textarea{
+	width: 100%;
+	max-width: 760px;
+  box-sizing: border-box;
+  font-family: monospace;
 }
 .mod-change_btn{
 	background-color: #6cd;

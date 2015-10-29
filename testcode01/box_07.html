@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>吹き出し付きボックス</title>
+<link rel="stylesheet" href="/common/css/normalize.css">
+<link rel="stylesheet" href="/common/css/common.css">
+<link rel="stylesheet" href="/common/css/debugTool.css">
+<script src="/common/js/jquery-1.11.3.min.js"></script>
+<script src="/common/js/common.js"></script>
+<script src="/common/js/prettify.js"></script>
+<script src="/common/js/lang-css.js"></script>
+</head>
+<body>
+<div id="markup_wrap" class="mod-parts-counter">
+<div class="js-markUp-sample mod-markUp-sample">
+<h4 class="mod-pts-H3">作例</h4>
+<dl class="mod-pts-list-browser">
+<dt>CSSスプライトを使用</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-marginBottom20">
+<div class="el-box01 el-boxBalloon_sprite">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<div class="el-boxBalloon_sprite_arrow"></div>
+<!-- /el-box01 --></div>
+<!-- /el-marginBottom20 --></div>
+
+<div class="el-marginBottom20">
+<div class="el-box01 el-boxFrame el-boxBalloon_sprite">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<div class="el-boxBalloon_sprite_arrow"></div>
+<!-- /el-box01 --></div>
+<!-- /el-marginBottom20 --></div>
+
+<dl class="mod-pts-list-browser">
+<dt>CSSスプライトを使用（影付き、角丸ボックス）</dt>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_IE"></span>9~</dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_FF"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Ch"></span></dd>
+<dd><span class="mod-pts-icon-browser mod-pts-icon-browser_Sa"></span></dd>
+</dl>
+
+<div class="el-marginBottom20">
+<div class="el-box01 el-boxShadow el-boxRound el-boxBalloon_sprite">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<div class="el-boxBalloon_sprite_arrow"></div>
+<!-- /el-box01 --></div>
+<!-- /el-marginBottom20 --></div>
+
+<div class="el-marginBottom20">
+<div class="el-box01 el-boxFrame el-boxShadow el-boxRound el-boxBalloon_sprite">
+<p class="mod-box-books_title">タイトル</p>
+<p class="mod-box-books_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p class="mod-box-books_author">著者名</p>
+<div class="el-boxBalloon_sprite_arrow"></div>
+<!-- /el-box01 --></div>
+<!-- /el-marginBottom20 --></div>
+
+<!-- /js-markUp-sample --></div>
+
+<h4 class="mod-pts-H3">コード</h4>
+<dl class="mod-codeViewList">
+<dt>HTML</dt>
+<dd>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="el-marginBottom20"&gt;
+&lt;div class="el-box01 el-boxBalloon_sprite"&gt;
+&lt;p class="mod-box-books_title"&gt;タイトル&lt;/p&gt;
+&lt;p class="mod-box-books_text"&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class="mod-box-books_author"&gt;著者名&lt;/p&gt;
+&lt;div class="el-boxBalloon_sprite_arrow"&gt;&lt;/div&gt;
+&lt;!-- /el-box01 --&gt;&lt;/div&gt;
+&lt;!-- /el-marginBottom20 --&gt;&lt;/div&gt;
+
+&lt;div class="el-marginBottom20"&gt;
+&lt;div class="el-box01 el-boxFrame el-boxBalloon_sprite"&gt;
+&lt;p class="mod-box-books_title"&gt;タイトル&lt;/p&gt;
+&lt;p class="mod-box-books_text"&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class="mod-box-books_author"&gt;著者名&lt;/p&gt;
+&lt;div class="el-boxBalloon_sprite_arrow"&gt;&lt;/div&gt;
+&lt;!-- /el-box01 --&gt;&lt;/div&gt;
+&lt;!-- /el-marginBottom20 --&gt;&lt;/div&gt;
+
+&lt;div class="el-marginBottom20"&gt;
+&lt;div class="el-box01 el-boxShadow el-boxRound el-boxBalloon_sprite"&gt;
+&lt;p class="mod-box-books_title"&gt;タイトル&lt;/p&gt;
+&lt;p class="mod-box-books_text"&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class="mod-box-books_author"&gt;著者名&lt;/p&gt;
+&lt;div class="el-boxBalloon_sprite_arrow"&gt;&lt;/div&gt;
+&lt;!-- /el-box01 --&gt;&lt;/div&gt;
+&lt;!-- /el-marginBottom20 --&gt;&lt;/div&gt;
+
+&lt;div class="el-marginBottom20"&gt;
+&lt;div class="el-box01 el-boxFrame el-boxShadow el-boxRound el-boxBalloon_sprite"&gt;
+&lt;p class="mod-box-books_title"&gt;タイトル&lt;/p&gt;
+&lt;p class="mod-box-books_text"&gt;テキストテキストテキストテキストテキストテキストテキストテキストテキスト&lt;/p&gt;
+&lt;p class="mod-box-books_author"&gt;著者名&lt;/p&gt;
+&lt;div class="el-boxBalloon_sprite_arrow"&gt;&lt;/div&gt;
+&lt;!-- /el-box01 --&gt;&lt;/div&gt;
+&lt;!-- /el-marginBottom20 --&gt;&lt;/div&gt;
+</pre>
+</dd>
+<dt>CSS(common.css)</dt>
+<dd>
+<pre class="prettyprint linenums lang-css">
+/* ボックスモデル共通 */
+.el-box01 {
+  padding: 13px;
+}
+.el-boxFrame {
+  border-style: solid;
+  border-width: 1px;
+}
+.el-boxRound {
+  border-radius: 10px;
+}
+.el-boxShadow {
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* 吹き出し付きボックス */
+.el-boxBalloon_sprite {
+  position: relative;
+}
+
+.el-boxBalloon_sprite_arrow {
+  position: absolute;
+  display: block;
+  top: auto;
+  right: auto;
+  bottom: -14px;
+  left: 50%;
+  width: 16px;
+  height: 14px;
+  margin-left: -8px;
+  background-image: url(../images/bg-balloonarrow.png);
+  background-repeat: no-repeat;
+}
+
+/* ボックス1（白） */
+.el-box01 {
+  background-color: #F7F7F7;
+}
+.el-boxFrame.el-box01 {
+  border-color: #CCC;
+}
+.el-boxBalloon_sprite.el-box01 .el-boxBalloon_sprite_arrow {
+  background-position: 0 -2px;
+}
+.el-boxBalloon_sprite.el-boxFrame.el-box01 .el-boxBalloon_sprite_arrow {
+  background-position: 0 -18px;
+}
+.el-boxBalloon_sprite.el-boxShadow.el-box01 .el-boxBalloon_sprite_arrow {
+  background-position: 0 -34px;
+}
+.el-boxBalloon_sprite.el-boxShadow.el-boxFrame.el-box01 .el-boxBalloon_sprite_arrow {
+  background-position: 0 -50px;
+}
+</pre>
+</dd>
+</dl>
+
+
+<p>吹き出し部分は背景画像で作成し、必要な部分のみ表示しています。</p>
+<p><img src="/common/images/bg-balloonarrow.png" alt=""></p>
+
+<!-- /#markup_wrap --></div>
+</body>
+</html>

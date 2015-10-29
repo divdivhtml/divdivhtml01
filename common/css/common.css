@@ -330,17 +330,14 @@ dd {
 .el-boxBalloon_character.el-box01:before {
   color: #CCC;
 }
-.el-boxFrame.el-boxBalloon_character.el-box01:after {
+.el-boxBalloon_character.el-box01:after {
   color: #F7F7F7;
 }
-.el-boxBalloon_transform.el-box01:before, .el-boxBalloon_transform.el-box01:after {
+.el-box01 .el-boxBalloon_transform_arrow:before {
   background-color: #F7F7F7;
 }
-.el-boxBalloon_transform.el-boxFrame.el-box01:before {
-  box-shadow: 0 0 0 1px #CCC;
-}
-.el-boxBalloon_transform.el-boxShadow.el-boxFrame.el-box01:before {
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25), 0 0 0 1px #E6E6E6;
+.el-boxFrame.el-box01 .el-boxBalloon_transform_arrow:before {
+  border-color: #CCC;
 }
 
 /* ボックス2（桃） */
@@ -389,14 +386,11 @@ dd {
 .el-boxBalloon_character.el-box02:after {
   color: #fef1f4;
 }
-.el-boxBalloon_transform.el-box02:before, .el-boxBalloon_transform.el-box02:after {
+.el-box02 .el-boxBalloon_transform_arrow:before {
   background-color: #fef1f4;
 }
-.el-boxBalloon_transform.el-boxFrame.el-box02:before {
-  box-shadow: 0 0 0 1px crimson;
-}
-.el-boxBalloon_transform.el-boxShadow.el-boxFrame.el-box02:before {
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25), 0 0 0 1px crimson;
+.el-boxFrame.el-box02 .el-boxBalloon_transform_arrow:before {
+  border-color: crimson;
 }
 
 /* ボックス3（水色） */
@@ -448,14 +442,11 @@ dd {
 .el-boxBalloon_character.el-box03:after {
   color: #eaf6ff;
 }
-.el-boxBalloon_transform.el-box03:before, .el-boxBalloon_transform.el-box03:after {
+.el-box03 .el-boxBalloon_transform_arrow:before {
   background-color: #eaf6ff;
 }
-.el-boxBalloon_transform.el-boxFrame.el-box03:before {
-  box-shadow: 0 0 0 1px #0068b7;
-}
-.el-boxBalloon_transform.el-boxShadow.el-boxFrame.el-box03:before {
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25), 0 0 0 1px #0068b7;
+.el-boxFrame.el-box03 .el-boxBalloon_transform_arrow:before {
+  border-color: #0068b7;
 }
 
 .el-boxFrame {
@@ -641,46 +632,42 @@ dd {
   text-shadow: 0 0 0 0;
 }
 
-.el-boxBalloon_transform {
-  z-index: 1;
-}
-
-.el-boxBalloon_transform:before {
+.el-boxBalloon_transform_arrow {
   content: "";
   position: absolute;
   display: block;
   top: auto;
   right: auto;
-  bottom: -7px;
+  bottom: -21px;
   left: 50%;
   width: 20px;
-  height: 20px;
+  height: 21px;
   margin-left: -10px;
+  overflow: hidden;
+}
+
+.el-boxBalloon_transform_arrow:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -11px;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  width: 18px;
+  height: 18px;
   -webkit-transform: rotate(67.5deg) skew(45deg) scale(1, 0.7);
   -moz-transform: rotate(67.5deg) skew(45deg) scale(1, 0.7);
   transform: rotate(67.5deg) skew(45deg) scale(1, 0.7);
 }
 
-.el-boxBalloon_transform:after {
-  content: "";
-  position: absolute;
-  display: block;
-  top: auto;
-  right: auto;
-  bottom: 0;
-  left: 50%;
-  width: 20px;
-  height: 23px;
-  margin-left: -10px;
+.el-boxFrame .el-boxBalloon_transform_arrow:before {
+  border-style: solid;
+  border-width: 1px;
 }
 
-.el-boxShadow.el-boxBalloon_transform:before {
+.el-boxShadow .el-boxBalloon_transform_arrow:before {
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.25);
-}
-
-.el-boxBalloon_transform_inner {
-  position: relative;
-  z-index: 2;
 }
 
 /* 閉じるアイコン */
